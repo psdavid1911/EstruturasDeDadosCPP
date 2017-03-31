@@ -137,12 +137,27 @@ public:
      * @param elemento, que deve ser buscado.
      * @return O índice da posicao do elemento desejado.
      */
-    int buscaBinaria(T elemento, int indiceInicio, int largura) {
-        if (indiceInicio > largura) return -1;
-        int indiceMeio = (largura + indiceInicio) / 2;
-        if (elemento == vetor[indiceMeio]) return indiceMeio;
-        else if (elemento < vetor[indiceMeio]) return buscaBinaria(elemento, indiceInicio + 1, indiceMeio);
-        else if (elemento > vetor[indiceMeio]) return buscaBinaria(elemento, indiceMeio, largura - 1);
+//    int buscaBinaria(T elemento, int indiceInicio, int largura) {
+//        if (indiceInicio > largura) return -1;
+//        int indiceMeio = (largura + indiceInicio) / 2;
+//        if (elemento == vetor[indiceMeio]) return indiceMeio;
+//        else if (elemento < vetor[indiceMeio]) return buscaBinaria(elemento, indiceInicio + 1, indiceMeio);
+//        else if (elemento > vetor[indiceMeio]) return buscaBinaria(elemento, indiceMeio, largura - 1);
+//    }
+
+    // x => chave| e => Limite inferior (esquerda) | d => Limite Superior (direita)
+
+    int buscaBinaria(T chave, int limiteInferior, int limiteSuperior) {
+        int i = (limiteInferior + limiteSuperior) / 2;
+        if (vetor[i] == chave)
+            return i;
+        if (limiteInferior >= limiteSuperior)
+            return -1; // Não foi encontrado
+        else
+            if (vetor[i] < chave)
+            return buscaBinaria(chave, vetor, i + 1, limiteSuperior);
+        else
+            return buscaBinaria(chave, vetor, limiteInferior, i - 1);
     }
 
     /**

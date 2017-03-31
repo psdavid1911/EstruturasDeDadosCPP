@@ -28,15 +28,12 @@ void Lista01Questao04() {
             } else lista.adiciona(numero);
         }
         lista.imprime();
-        busca = lista.buscaSequencial(valorLido);
+        busca = lista.buscaBinaria(valorLido, 0 , lista.tamanho);
     } while (busca == -1);
     resposta();
     if(busca>2)cout << "Esquerda: " << lista.vetor[busca-2] << "   " << lista.vetor[busca-1] << endl;
     cout << "Valor: " << lista.vetor[busca] << endl;
     cout << "Direita: " << lista.vetor[busca+1] << "   " << lista.vetor[busca+2] << endl;
-
-
-
 }
 #endif /* LISTA01QUESTAO01_H */
 

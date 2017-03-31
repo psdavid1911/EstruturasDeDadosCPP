@@ -1,2 +1,2 @@
 # EstruturasDeDadosCPP
-Material de aula
+Exercícios resolvidos da disciplina de Estruturas de dados, todos estarão aqui.
