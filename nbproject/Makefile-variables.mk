@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=lista01questao01
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/lista01questao01
+CND_ARTIFACT_NAME_Debug=estruturasdedadoscpp
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/estruturasdedadoscpp
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=lista01questao01.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/lista01questao01.tar
+CND_PACKAGE_NAME_Debug=estruturasdedadoscpp.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/estruturasdedadoscpp.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=lista01questao01
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/lista01questao01
+CND_ARTIFACT_NAME_Release=estruturasdedadoscpp
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/estruturasdedadoscpp
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=lista01questao01.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/lista01questao01.tar
+CND_PACKAGE_NAME_Release=estruturasdedadoscpp.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/estruturasdedadoscpp.tar
 #
 # include compiler specific variables
 #

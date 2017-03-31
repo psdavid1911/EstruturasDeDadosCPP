@@ -15,7 +15,7 @@
 #include "Lista01Questao01.h"
 #include "Lista01Questao02.h"
 #include "Lista01Questao03.h"
-
+#include "Lista01Questao04.h"
 #include "Lista01Questao05.h"
 
 
@@ -45,7 +45,7 @@ int main() {
                 Lista01Questao03();
                 break;
             case 4:
-                //Lista01Questao04();
+                Lista01Questao04();
                 break;
             case 5:
                 Lista01Questao05();

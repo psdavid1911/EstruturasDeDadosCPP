@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Lista01Questao01
+PROJECTNAME=EstruturasDeDadosCPP
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -158,6 +158,12 @@ public:
         return novaLista;
     }
 
+    int buscaSequencial(T elemento) {
+        for (int contador = 0; contador < tamanho; contador++)
+            if (elemento == vetor[contador])return contador;
+        return -1;
+    }
+
 private:
 
     void SelectionSort() {
