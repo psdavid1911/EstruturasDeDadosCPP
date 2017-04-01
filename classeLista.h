@@ -1,16 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   classeLista.h
- * Author: david
- *
- * Created on 30 de Março de 2017, 21:36
- */
-
 #ifndef CLASSELISTA_H
 #define CLASSELISTA_H
 
@@ -132,21 +119,6 @@ public:
         return maior;
     }
 
-    /**
-     * Os elementos devem estar ordenados antes de se utilizar essa função.
-     * @param elemento, que deve ser buscado.
-     * @return O índice da posicao do elemento desejado.
-     */
-//    int buscaBinaria(T elemento, int indiceInicio, int largura) {
-//        if (indiceInicio > largura) return -1;
-//        int indiceMeio = (largura + indiceInicio) / 2;
-//        if (elemento == vetor[indiceMeio]) return indiceMeio;
-//        else if (elemento < vetor[indiceMeio]) return buscaBinaria(elemento, indiceInicio + 1, indiceMeio);
-//        else if (elemento > vetor[indiceMeio]) return buscaBinaria(elemento, indiceMeio, largura - 1);
-//    }
-
-    // x => chave| e => Limite inferior (esquerda) | d => Limite Superior (direita)
-
     int buscaBinaria(T chave, int limiteInferior, int limiteSuperior) {
         int i = (limiteInferior + limiteSuperior) / 2;
         if (vetor[i] == chave)
@@ -155,9 +127,9 @@ public:
             return -1; // Não foi encontrado
         else
             if (vetor[i] < chave)
-            return buscaBinaria(chave, vetor, i + 1, limiteSuperior);
+            return buscaBinaria(chave, i + 1, limiteSuperior);
         else
-            return buscaBinaria(chave, vetor, limiteInferior, i - 1);
+            return buscaBinaria(chave, limiteInferior, i - 1);
     }
 
     /**
@@ -177,6 +149,11 @@ public:
         for (int contador = 0; contador < tamanho; contador++)
             if (elemento == vetor[contador])return contador;
         return -1;
+    }
+    
+    void limpa(){
+        tamanho = 0;
+        vetor = new T[++tamanho];
     }
 
 private:
@@ -200,5 +177,4 @@ private:
     }
 };
 
-#endif /* CLASSELISTA_H */
-
+#endif

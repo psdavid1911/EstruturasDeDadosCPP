@@ -1,23 +1,20 @@
 #ifndef LISTA01QUESTAO04_H
 #define LISTA01QUESTAO04_H
 
-#include <iostream>
-#include <cstdlib>
-#include <math.h>
-#include <string>
-#include <iomanip>
-#include <locale>
-#include <sstream>
-#include <string>
 #include "classeLista.h"
 #include "funcoesAuxiliares.h"
 using namespace std;
 
-void Lista01Questao04() {
-    entradas();
+void Lista01Questao04() { // crivo de Eratóstenes
+    string questao = "Desenvolva um algoritmo que, determine se um determinado número N informado é\n" \
+            "primo ou não. Se sim, que encontre e informe os dois primos antecessores de N e os dois\n" \
+            "primos sucessores de N. O algoritmo só encerra quando for informado um número N\n" \
+            "primo.\n";
+    entradas(questao);
     Lista<int> lista;
     int busca;
     do {
+        lista.limpa();
         int valorLido = leInteiro();
         lista.adiciona(2);
         lista.adiciona(3);
@@ -28,12 +25,12 @@ void Lista01Questao04() {
             } else lista.adiciona(numero);
         }
         lista.imprime();
-        busca = lista.buscaBinaria(valorLido, 0 , lista.tamanho);
+        busca = lista.buscaBinaria(valorLido, 0, lista.tamanho);
     } while (busca == -1);
     resposta();
-    if(busca>2)cout << "Esquerda: " << lista.vetor[busca-2] << "   " << lista.vetor[busca-1] << endl;
+    if (busca > 2)cout << "Esquerda: " << lista.vetor[busca - 2] << "   " << lista.vetor[busca - 1] << endl;
     cout << "Valor: " << lista.vetor[busca] << endl;
-    cout << "Direita: " << lista.vetor[busca+1] << "   " << lista.vetor[busca+2] << endl;
+    cout << "Direita: " << lista.vetor[busca + 1] << "   " << lista.vetor[busca + 2] << endl;
 }
 #endif /* LISTA01QUESTAO01_H */
 

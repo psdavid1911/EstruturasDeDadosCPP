@@ -1,23 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   01.cpp
- * Author: david
- *
- * Created on 30 de Março de 2017, 00:50
- */
-
 #include "funcoesAuxiliares.h"
 #include "Lista01Questao01.h"
 #include "Lista01Questao02.h"
 #include "Lista01Questao03.h"
 #include "Lista01Questao04.h"
 #include "Lista01Questao05.h"
-
 
 using namespace std;
 

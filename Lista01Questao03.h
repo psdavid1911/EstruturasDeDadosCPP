@@ -1,31 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Lista01Questao03.h
- * Author: david
- *
- * Created on 31 de Março de 2017, 09:06
- */
-
 #ifndef LISTA01QUESTAO03_H
 #define LISTA01QUESTAO03_H
 
-#include <cstdlib>
 #include "classeLista.h"
 #include "funcoesAuxiliares.h"
-
-
 using namespace std;
 
-/*
- * 
- */
-int Lista01Questao03() {
-    entradas();
+void Lista01Questao03() {
+    string questao = "Leia um vetor A e um vetor B, ambos com N elementos e que intercale estes vetores A e \n" \
+            "B, formando um outro vetor C da seguinte forma. A seguir efetue uma pesquisa\n" \
+            "seqüencial no vetor C.\n" \
+            "C[1] <- A[1]\n" \
+            "C[2] <- B[1]\n" \
+            "C[3] <- A[2]\n" \
+            "C[4] <- B[2]\n";
+    entradas(questao);
     Lista<int> a, b, c;
     int valorLido = leInteiro();
     while (valorLido != -1) {
@@ -38,14 +26,13 @@ int Lista01Questao03() {
         valorLido = leInteiro();
     }
     resposta();
-    int contador1=0, contador2=0;
-    while(true){
-        if(contador1 < a.tamanho)c.adiciona(a.vetor[contador1++]);
-        if(contador2 < b.tamanho)c.adiciona(b.vetor[contador2++]);
-        if(contador1 >= a.tamanho && contador2 >= b.tamanho) break;
+    int contador1 = 0, contador2 = 0;
+    while (true) {
+        if (contador1 < a.tamanho)c.adiciona(a.vetor[contador1++]);
+        if (contador2 < b.tamanho)c.adiciona(b.vetor[contador2++]);
+        if (contador1 >= a.tamanho && contador2 >= b.tamanho) break;
     }
     c.imprime();
-    return 0;
 }
 
 #endif /* LISTA01QUESTAO03_H */

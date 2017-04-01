@@ -1,27 +1,17 @@
 #ifndef LISTA01QUESTAO01_H
 #define LISTA01QUESTAO01_H
 
-#include <iostream>
-#include <cstdlib>
-#include <math.h>
-#include <string>
-#include <iomanip>
-#include <locale>
-#include <sstream>
-#include <string>
 #include "classeLista.h"
 #include "funcoesAuxiliares.h"
 using namespace std;
 
-/*
- 1. Leia uma lista de no máximo 100 números inteiros, carregando-os em um vetor. Os
-números lidos maiores ou iguais que 256 deverão ser ignorados.
- Ordene os números lidos em ordem decrescente.
- Informar quantos são ímpares e quantos são pares.
- Apresente a média dos números ímpares maiores que 50.
- */
 void Lista01Questao01() {
-    entradas();
+    string questao = "1. Leia uma lista de no máximo 100 números inteiros, carregando-os em um vetor.\n" \
+            "Os números lidos maiores ou iguais que 256 deverão ser ignorados.\n" \
+            "- Ordene os números lidos em ordem decrescente.\n" \
+            "- Informar quantos são ímpares e quantos são pares.\n" \
+            "- Apresente a média dos números ímpares maiores que 50.\n";
+    entradas(questao);
     Lista<int> listaDeValores, listaDePares, listaDeImpares, listaDeImparesMaioresQueCinquenta;
     int numeroDePares = 0, numeroDeImpares = 0, valorLido = 0;
     valorLido = leInteiro();

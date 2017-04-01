@@ -1,30 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Lista01Questao05.h
- * Author: david
- *
- * Created on 31 de Março de 2017, 09:09
- */
-
 #ifndef LISTA01QUESTAO05_H
 #define LISTA01QUESTAO05_H
 
-#include <cstdlib>
 #include "classeLista.h"
 #include "funcoesAuxiliares.h"
-
 using namespace std;
 
-/*
- * 
- */
-int Lista01Questao05() {
-    entradas();
+void Lista01Questao05() {
+    string questao = "5. Escreva um algoritmo que receba um vetor de N elementos e verifique a existência de\n" \
+            "elementos repetidos. Caso não existam elementos repetidos retorne um “Ok”. Caso\n" \
+            "contrário, que remova as repetições dos elementos e que retorne o número de\n" \
+            "elementos removidos. A seguir efetue uma pesquisa binária no vetor sem elementos\n" \
+            "repetidos.\n";
+    entradas(questao);
     Lista<int> a, repetidos;
     int valorLido = leInteiro();
     int tamanhoInicial;
@@ -43,7 +30,6 @@ int Lista01Questao05() {
             a.adiciona(valorAtual);
             repetidos.adiciona(valorAtual);
         }
-
     if (repetidos.tamanho == 0) cout << "Não tem elementos repetidos" << endl;
     else {
         cout << "Numero de elementos ÚNICOS que se repetiam: " << repetidos.tamanho << endl;
@@ -58,8 +44,6 @@ int Lista01Questao05() {
     indiceDoElemento = a.buscaBinaria(2, 0, a.tamanho);
     cout << "Indice do elemento 2 da busca binaria(-1 se não existir): " << indiceDoElemento << endl;
     cout << "Elemento: " << a.vetor[indiceDoElemento] << endl;
-    
-    return 0;
 }
 
 #endif /* LISTA01QUESTAO05_H */
