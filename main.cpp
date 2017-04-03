@@ -4,8 +4,10 @@
 #include "Lista01Questao03.h"
 #include "Lista01Questao04.h"
 #include "Lista01Questao05.h"
-
+#include "Lista02Questao01.h"
 #include "Lista02Questao02.h"
+#include "Lista02Questao03.h"
+#include "Lista02Questao04.h"
 
 using namespace std;
 
@@ -45,6 +47,12 @@ int main() {
                 break;
             case 7:
                 Lista02Questao02();
+                break;
+            case 8:
+                //Lista02Questao03();
+                break;
+            case 9:
+                Lista02Questao04();
                 break;
             default:
                 break;
