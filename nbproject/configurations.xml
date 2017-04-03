@@ -9,6 +9,12 @@
       <itemPath>Lista01Questao03.h</itemPath>
       <itemPath>Lista01Questao04.h</itemPath>
       <itemPath>Lista01Questao05.h</itemPath>
+      <itemPath>Lista02Questao01.h</itemPath>
+      <itemPath>Lista02Questao02.h</itemPath>
+      <itemPath>Lista02Questao03.h</itemPath>
+      <itemPath>Lista02Questao04.h</itemPath>
+      <itemPath>Lista02Questao05.h</itemPath>
+      <itemPath>Lista02Questao06.h</itemPath>
       <itemPath>classeLista.h</itemPath>
       <itemPath>funcoesAuxiliares.h</itemPath>
     </logicalFolder>
@@ -54,6 +60,18 @@
       </item>
       <item path="Lista01Questao05.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Lista02Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao02.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao03.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao04.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao05.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao06.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="funcoesAuxiliares.h" ex="false" tool="3" flavor2="0">
@@ -92,6 +110,18 @@
       <item path="Lista01Questao04.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista01Questao05.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao02.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao03.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao04.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao05.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista02Questao06.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>

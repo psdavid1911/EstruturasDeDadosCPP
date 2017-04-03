@@ -5,6 +5,8 @@
 #include "Lista01Questao04.h"
 #include "Lista01Questao05.h"
 
+#include "Lista02Questao02.h"
+
 using namespace std;
 
 int main() {
@@ -19,6 +21,8 @@ int main() {
                 << "3" << ". Questao 01 da lista 03" << endl
                 << "4" << ". Questao 01 da lista 04" << endl
                 << "5" << ". Questao 01 da lista 05" << endl
+                << "6" << ". Questao 01 da lista 02" << endl
+                << "7" << ". Questao 02 da lista 02" << endl
                 << endl;
         switch (leInteiro()) {
             case 1:
@@ -35,6 +39,12 @@ int main() {
                 break;
             case 5:
                 Lista01Questao05();
+                break;
+            case 6:
+                //Lista02Questao01();
+                break;
+            case 7:
+                Lista02Questao02();
                 break;
             default:
                 break;

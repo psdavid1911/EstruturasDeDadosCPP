@@ -73,6 +73,20 @@ double leDouble() {
     return valor;
 }
 
+bool leBool(){
+    cout << "Entrada > ";
+    bool valor;
+    cin >> valor;
+    return valor;
+}
+
+string leString(){
+    cout << "Entrada > ";
+    string valor;
+    cin >> valor;
+    return valor;
+}
+
 void imprime(string s) {
     cout << s;
 }
