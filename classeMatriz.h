@@ -48,30 +48,12 @@ public:
             for (int coluna = 0; coluna < result.numeroDeColunas; coluna++) {
                 T acumulador = 0;
                 for (int contadorInterno = 0; contadorInterno < this->numeroDeColunas; contadorInterno++) {
-                    acumulador += (this->matriz[linha * numeroDeColunas + contadorInterno] * right.matriz[contadorInterno * right.numeroDeColunas+ coluna]);
-                    cout
-                            << this->matriz[linha * numeroDeColunas + contadorInterno] << " * "
-                            << right.matriz[contadorInterno * right.numeroDeColunas + coluna] << " = "
-                            << acumulador << endl;
+                    acumulador += (this->matriz[linha * numeroDeColunas + contadorInterno] * right.matriz[contadorInterno * right.numeroDeColunas + coluna]);
                 }
-                result.matriz[linha * numeroDeColunas + coluna] = acumulador;
+                result.matriz[linha * result.numeroDeColunas + coluna] = acumulador;
             }
         }
         return result;
-    }
-
-    Matriz<T>& operator*=(const Matriz<T>& right) {
-        if (this->numeroDeColunas != right.numeroDeLinhas) return (*this);
-        for (int linha = 0; linha < this->numeroDeLinhas; linha++) {
-            for (int coluna = 0; coluna < this->numeroDeColunas; coluna++) {
-                T acumulador = 0;
-                for (int contadorInterno = 0; contadorInterno < this->numeroDeColunas; contadorInterno++) {
-                    acumulador += this->matriz[linha * numeroDeColunas + contadorInterno] * right.matriz[contadorInterno * numeroDeColunas + coluna];
-                }
-                this->matriz[linha * numeroDeColunas + coluna] = acumulador;
-            }
-        }
-        return (*this);
     }
 
     Matriz<T> operator+(const Matriz<T>& right) const {
