@@ -1,20 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Lista02Questao06.h
- * Author: david
- *
- * Created on 3 de Abril de 2017, 09:29
- */
-
 #ifndef LISTA02QUESTAO06_H
 #define LISTA02QUESTAO06_H
 
+#include "Lista02Questao05.h"
+#include "funcoesAuxiliares.h"
+#include "classeLista.h"
 
+void Lista02Questao06() {
+    Agenda agenda;
+    while (true) {
+        cout
+                << "----------------------------------------------------" << endl
+                << "MENU INTERNO" << endl
+                << "----------------------------------------------------" << endl
+                << "O que deseja fazer? " << endl
+                << "1. Inserir um registro" << endl
+                << "2. Alterar um registro" << endl
+                << "3. Exibir um registro" << endl
+                << "4. Exibir todos os registros" << endl
+                << "Qualquer outra opcao ele sai..." << endl;
 
-#endif /* LISTA02QUESTAO06_H */
+        int opcao = leInteiro();
+        switch (opcao) {
+            case 1:
+                agenda.promptAdiciona();
+                break;
+            case 2:
+                agenda.promptAlterarRegistro();
+                break;
+            case 3:
+                resposta();
+                agenda.promptBusca();
+                break;
+            case 4:
+                resposta();
+                agenda.imprime();
+                break;
+            default:
+                return;
+        }
+    }
+}
+#endif
 
+// Elegante 
+// Boa prática de programação

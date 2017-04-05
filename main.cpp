@@ -6,27 +6,41 @@
 #include "Lista01Questao05.h"
 #include "Lista02Questao01.h"
 #include "Lista02Questao02.h"
-#include "Lista02Questao03.h"
+#include "Lista02Questao03.h" // É a questão 4
 #include "Lista02Questao04.h"
+#include "Lista02Questao05.h"
+#include "Lista02Questao06.h"
 
 using namespace std;
 
-int main() {
-    while (true) {
-        cout << "----------------------------------------------------" << endl
+int main(){
+    while(true){
+        cout
+                << "----------------------------------------------------" << endl
                 << "MENU" << endl
                 << "----------------------------------------------------" << endl
                 << "Escolha a questao que deseja executar:" << endl
-                << endl
-                << "1" << ". Questao 01 da lista 01" << endl
-                << "2" << ". Questao 01 da lista 02" << endl
-                << "3" << ". Questao 01 da lista 03" << endl
-                << "4" << ". Questao 01 da lista 04" << endl
-                << "5" << ". Questao 01 da lista 05" << endl
-                << "6" << ". Questao 01 da lista 02" << endl
-                << "7" << ". Questao 02 da lista 02" << endl
+                << "LISTA 01" << endl
+                << " 1" << ". Questao 01 da lista 01" << endl
+                << " 2" << ". Questao 02 da lista 01" << endl
+                << " 3" << ". Questao 03 da lista 01" << endl
+                << " 4" << ". Questao 04 da lista 01" << endl
+                << " 5" << ". Questao 05 da lista 01" << endl
+                << "LISTA 02" << endl
+                << " 6" << ". Questao 01 da lista 02" << endl
+                << " 7" << ". Questao 02 da lista 02" << endl
+                << " 8" << ". Questao 03 da lista 02" << endl
+                << " 9" << ". Questao 04 da lista 02" << endl
+                << "10" << ". Questao 05 da lista 02" << endl
+                << "11" << ". Questao 06 da lista 02" << endl
+                << "OUTRAS OPCOES" << endl
+                << "99" << ". Qualquer outra opcao fecha o programa."
                 << endl;
-        switch (leInteiro()) {
+        
+        
+        
+        
+        switch(leInteiro()){
             case 1:
                 Lista01Questao01();
                 break;
@@ -43,18 +57,25 @@ int main() {
                 Lista01Questao05();
                 break;
             case 6:
-                //Lista02Questao01();
+                Lista02Questao01();
                 break;
             case 7:
                 Lista02Questao02();
                 break;
             case 8:
-                //Lista02Questao03();
+                Lista02Questao04();
                 break;
             case 9:
                 Lista02Questao04();
                 break;
+            case 10:
+                Lista02Questao06();
+                break;
+            case 11:
+                Lista02Questao06();
+                break;
             default:
+                exit(0);
                 break;
         }
     }

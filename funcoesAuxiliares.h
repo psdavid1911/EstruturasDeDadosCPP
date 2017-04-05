@@ -1,16 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   funcoesAuxiliares.h
- * Author: david
- *
- * Created on 30 de Março de 2017, 21:48
- */
-
 #ifndef FUNCOESAUXILIARES_H
 #define FUNCOESAUXILIARES_H
 
@@ -60,28 +47,28 @@ template <typename T> T StringToNumber(const string &Text) {
 }
 
 int leInteiro() { // 3 linhas, PQP!
-    cout << "Entrada > ";
+    cout << "Inteiro > ";
     int valor;
     cin >> valor;
     return valor;
 }
 
 double leDouble() {
-    cout << "Entrada > ";
+    cout << "Double > ";
     double valor;
     cin >> valor;
     return valor;
 }
 
 bool leBool(){
-    cout << "Entrada > ";
+    cout << "Bool > ";
     bool valor;
     cin >> valor;
     return valor;
 }
 
 string leString(){
-    cout << "Entrada > ";
+    cout << "String > ";
     string valor;
     cin >> valor;
     return valor;
