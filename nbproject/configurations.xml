@@ -15,6 +15,7 @@
       <itemPath>Lista02Questao04.h</itemPath>
       <itemPath>Lista02Questao05.h</itemPath>
       <itemPath>Lista02Questao06.h</itemPath>
+      <itemPath>Lista03Questao01.h</itemPath>
       <itemPath>classeLista.h</itemPath>
       <itemPath>classeMatriz.h</itemPath>
       <itemPath>funcoesAuxiliares.h</itemPath>
@@ -73,6 +74,8 @@
       </item>
       <item path="Lista02Questao06.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Lista03Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="3" flavor2="0">
@@ -125,6 +128,8 @@
       <item path="Lista02Questao05.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista02Questao06.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Lista03Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>
