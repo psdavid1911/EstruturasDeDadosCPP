@@ -8,29 +8,47 @@
 #ifndef LISTA03QUESTAO01_H
 #define LISTA03QUESTAO01_H
 
-#include <cstdlib>
-#include <stdio.h>
+#include <cstdlib> // malloc free
+#include <stdio.h> // printf (NULL ?)
 
-void Lista03Questao01() {
+/**
+ * ESTRUTURA FORNECIDA PELO PROFESSOR
+ */
+// ALTERNATIVA 1
+//class box{
+//public:
+//    char conteudo; // removido o acento
+//    box *proximo; // removido o acento
+//} *inicio, *temp, *temp2;
+// ALTERNATIVA 2
 
-    /**
-     * ESTRUTURA FORNECIDA PELO PROFESSOR
-     */
-    struct box {
-        char conteudo; // removido o acento
-        box *proximo; // removido o acento
-    } *inicio, *fim, *temp, *temp2;
+struct box {
+    char conteudo; // removido o acento
+    box *proximo; // removido o acento
+} *inicio, *temp, *temp2;
+
+void imprimeStruct() {
+    temp = inicio;
+    while (temp != 0) { // deferente de NULL
+        printf("Char: %c | Prox: %p\n", temp->conteudo, temp->proximo);
+        temp = temp->proximo;
+    }
+    printf("\n");
+}
+
+int Lista03Questao01() {
     /**
      * INÍCIO
      */
     inicio = (box*) malloc(sizeof (box));
+    //inicio = (box*) new box;
     inicio->proximo = NULL; // PODE SER 0 TBM
-    printf("\n\n\nChar: %c | Prox: %p\n\n", inicio->conteudo, (*inicio).proximo); // AS DUAS FORMAS SERVEM
+    imprimeStruct();
     /**
      * Questao 1
      */
     inicio->conteudo = 'a'; // O FIM TAMBÉM É O INICIO
-    printf("Char: %c | Prox: %p\n\n", inicio->conteudo, (*inicio).proximo); // AS DUAS FORMAS SERVEM
+    imprimeStruct();
     /**
      * Questao 2
      */
@@ -38,8 +56,7 @@ void Lista03Questao01() {
     temp->conteudo = 'b';
     temp->proximo = inicio;
     inicio = temp;
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, (*inicio).proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->conteudo, inicio->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 3
      */
@@ -49,9 +66,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo != NULL) temp2 = temp2->proximo; // move-se ate uma unidade antes do ultimo
     temp2->proximo = temp; // O que era null vira o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 4
      */
@@ -61,10 +76,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo != NULL) temp2 = temp2->proximo; // move-se ate uma unidade antes do ultimo
     temp2->proximo = temp; // O que era null vira o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 5 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA
      */
@@ -79,11 +91,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo->conteudo != 'a') temp2 = temp2->proximo; // move-se ate uma unidade antes da do conteudo desejado
     temp2->proximo->proximo = temp; // O que apontava para o proximo de 'a' agora aponta para o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 6
      */
@@ -93,12 +101,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo != NULL) temp2 = temp2->proximo; // move-se ate uma unidade antes do ultimo
     temp2->proximo = temp; // O que era null vira o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 7
      */
@@ -106,13 +109,7 @@ void Lista03Questao01() {
     temp->conteudo = 'g';
     temp->proximo = inicio;
     inicio = temp;
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 8
      */
@@ -122,26 +119,14 @@ void Lista03Questao01() {
     while (temp2->proximo->conteudo != temp->conteudo) temp2 = temp2->proximo; // move-se ate a penultima unidade antes do ultimo
     free(temp); // libera ultimo
     temp2->proximo = NULL; // penultimo aponta pra nulo
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 9
      */
     temp = inicio;
     inicio = inicio->proximo;
     free(temp);
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 10 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA
      */
@@ -156,13 +141,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo->conteudo != 'a') temp2 = temp2->proximo; // move-se ate uma unidade antes da do conteudo desejado
     temp2->proximo->proximo = temp; // O que apontava para o proximo de 'a' agora aponta para o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 11
      */
@@ -171,13 +150,7 @@ void Lista03Questao01() {
     temp2 = temp->proximo;
     temp->proximo = temp->proximo->proximo;
     free(temp2);
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 12 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA
      */
@@ -191,13 +164,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo != NULL) temp2 = temp2->proximo; // move-se ate uma unidade antes do ultimo
     temp2->proximo = temp; // O que era null vira o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 14 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA (!!!***MODIFICADO***!!!) MUDAR OUTROS TAMBÉM
      */
@@ -212,13 +179,7 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->conteudo != 'b') temp2 = temp2->proximo; // move-se ate uma unidade antes da do conteudo desejado
     temp2->proximo = temp; // O que apontava para o proximo de 'a' agora aponta para o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 15
      */
@@ -232,26 +193,14 @@ void Lista03Questao01() {
     temp2 = temp->proximo;
     temp->proximo = temp->proximo->proximo;
     free(temp2);
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 16 - LER A QUESTAO E GENERALIZAR, VOCE SABE QUE PODE SER MELHOR AKI.
      */
     temp = inicio;
     inicio = inicio->proximo;
     free(temp);
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
     /**
      * Questao 17
      */
@@ -261,13 +210,12 @@ void Lista03Questao01() {
     temp2 = inicio; // inicializa variavel que vai percorrer a cadeia
     while (temp2->proximo != NULL) temp2 = temp2->proximo; // move-se ate uma unidade antes do ultimo
     temp2->proximo = temp; // O que era null vira o novo elemento criado
-    printf("Char: %c | Prox: %p\n", inicio->conteudo, inicio->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->conteudo, inicio->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->conteudo, inicio->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n", inicio->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo);
-    printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo);
-    //printf("Char: %c | Prox: %p\n\n", inicio->proximo->proximo->proximo->proximo->proximo->proximo->conteudo, inicio->proximo->proximo->proximo->proximo->proximo->proximo->proximo);
+    imprimeStruct();
+    /**
+     * Fim
+     * @return 
+     */
+    return 0;
 }
 
 #endif /* LISTA03QUESTAO01_H */

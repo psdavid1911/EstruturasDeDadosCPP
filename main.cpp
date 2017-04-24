@@ -11,6 +11,7 @@
 #include "Lista02Questao05.h"
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
+#include "Lista04Questao01.h"
 
 using namespace std;
 
@@ -35,7 +36,9 @@ int main(){
                 << "10" << ". Questao 05 da lista 02" << endl
                 << "11" << ". Questao 06 da lista 02" << endl
                 << "LISTA 03" << endl
-                << "12" << ". Questao 01 da lista 02" << endl
+                << "12" << ". Questao 01 da lista 03" << endl
+                << "LISTA 04" << endl
+                << "13" << ". Questao 01 da lista 04" << endl
                 << "OUTRAS OPCOES" << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
                 << endl;
@@ -79,6 +82,10 @@ int main(){
                 break;
             case 12:
                 Lista03Questao01();
+                break;
+            case 13:
+                Lista04Questao01();
+                break;
             default:
                 exit(0);
                 break;
