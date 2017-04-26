@@ -3,7 +3,7 @@
 
 #include "bibliotecas.h"
 
-void Lista02Questao01() {
+void Lista02Questao01(){
     Matriz<int> a(5, 4);
     Matriz<int> b(4, 3);
     Matriz<int> c(5, 3);
@@ -20,7 +20,7 @@ void Lista02Questao01() {
     b.imprime();
     resposta();
     cout << "Impressao da matriz c" << endl;
-    c = a*b;
+    c=a*b;
     c.imprime();
 }
 

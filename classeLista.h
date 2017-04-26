@@ -3,33 +3,33 @@
 
 #include "bibliotecas.h"
 
-template <class T> class Lista {
+template <class T> class Lista{
 public:
     int tamanho;
     T * vetor;
 
-    Lista() {
-        tamanho = 0;
+    Lista(){
+        tamanho=0;
     }
 
-    void adiciona(T valor) {
-        T * novoVetor = new T[++tamanho];
-        int contador = 0;
-        for (contador = 0; contador < tamanho - 1; contador++) {
-            novoVetor[contador] = vetor[contador];
+    void adiciona(T valor){
+        T * novoVetor=new T[++tamanho];
+        int contador=0;
+        for(contador=0; contador < tamanho - 1; contador++){
+            novoVetor[contador]=vetor[contador];
         }
-        novoVetor[contador] = valor;
+        novoVetor[contador]=valor;
         //delete inteiros; // essa opcao da problema mas onde vai liberar a memoria? 
-        vetor = novoVetor;
+        vetor=novoVetor;
     }
 
-    void imprime() {
+    void imprime(){
         cout << "[";
-        int contador = 0;
-        while (true) {
+        int contador=0;
+        while(true){
             cout << vetor[contador];
             contador++;
-            if (contador == tamanho)break;
+            if(contador == tamanho)break;
             cout << ", ";
         }
         cout << "]" << endl;
@@ -39,18 +39,18 @@ public:
 
 public:
 
-    void ordena() {
+    void ordena(){
         SelectionSort();
     }
 
-    void inverte() {
-        T * novoVetor = new T[tamanho];
-        int contadorProgressivo = 0;
-        for (int contadorRegressivo = tamanho - 1; contadorRegressivo >= 0; contadorRegressivo--) {
-            novoVetor[contadorRegressivo] = vetor[contadorProgressivo];
+    void inverte(){
+        T * novoVetor=new T[tamanho];
+        int contadorProgressivo=0;
+        for(int contadorRegressivo=tamanho - 1; contadorRegressivo >= 0; contadorRegressivo--){
+            novoVetor[contadorRegressivo]=vetor[contadorProgressivo];
             contadorProgressivo++;
         }
-        vetor = novoVetor;
+        vetor=novoVetor;
     }
 
     /*
@@ -59,16 +59,16 @@ public:
         this->tamanhoDoVetor = outro.tamanhoDoVetor;
     }*/
 
-    T pega(int posicao) {
+    T pega(int posicao){
         return vetor[posicao];
     }
 
     /*
      verifica se a lista contem o elemento
      */
-    bool existe(T elemento) {
-        for (int contador = 0; contador < tamanho; contador++)
-            if (elemento == vetor[contador])return true;
+    bool existe(T elemento){
+        for(int contador=0; contador < tamanho; contador++)
+            if(elemento == vetor[contador])return true;
         return false;
     }
 
@@ -76,48 +76,48 @@ public:
      * Esse metodo remove TODAS as ocorrencias do elemento.
      * @param valor
      */
-    void remove(T valor) {
+    void remove(T valor){
         Lista novo;
-        for (int contador = 0; contador < tamanho; contador++) {
-            if (vetor[contador] == valor) continue;
+        for(int contador=0; contador < tamanho; contador++){
+            if(vetor[contador] == valor) continue;
             else novo.adiciona(vetor[contador]);
         }
-        this->vetor = novo.vetor;
-        this->tamanho = novo.tamanho;
+        this->vetor=novo.vetor;
+        this->tamanho=novo.tamanho;
     }
 
-    void removeIndice(int posicao) {
+    void removeIndice(int posicao){
         Lista novo;
-        for (int contador = 0; contador < tamanho; contador++) {
-            if (contador == posicao) continue;
+        for(int contador=0; contador < tamanho; contador++){
+            if(contador == posicao) continue;
             else novo.adiciona(vetor[contador]);
         }
-        this->vetor = novo.vetor;
-        this->tamanho = novo.tamanho;
+        this->vetor=novo.vetor;
+        this->tamanho=novo.tamanho;
     }
 
-    T menor() {
-        int menor = vetor[0];
-        for (int contador = 1; contador < tamanho; contador++)
-            if (menor > vetor[contador]) menor = vetor[contador];
+    T menor(){
+        int menor=vetor[0];
+        for(int contador=1; contador < tamanho; contador++)
+            if(menor > vetor[contador]) menor=vetor[contador];
         return menor;
     }
 
-    T maior() {
-        int maior = vetor[0];
-        for (int contador = 1; contador < tamanho; contador++)
-            if (maior < vetor[contador]) maior = vetor[contador];
+    T maior(){
+        int maior=vetor[0];
+        for(int contador=1; contador < tamanho; contador++)
+            if(maior < vetor[contador]) maior=vetor[contador];
         return maior;
     }
 
-    int buscaBinaria(T chave, int limiteInferior, int limiteSuperior) {
-        int i = (limiteInferior + limiteSuperior) / 2;
-        if (vetor[i] == chave)
+    int buscaBinaria(T chave, int limiteInferior, int limiteSuperior){
+        int i=(limiteInferior + limiteSuperior) / 2;
+        if(vetor[i] == chave)
             return i;
-        if (limiteInferior >= limiteSuperior)
+        if(limiteInferior >= limiteSuperior)
             return -1; // Não foi encontrado
         else
-            if (vetor[i] < chave)
+            if(vetor[i] < chave)
             return buscaBinaria(chave, i + 1, limiteSuperior);
         else
             return buscaBinaria(chave, limiteInferior, i - 1);
@@ -129,40 +129,40 @@ public:
      * @param indiceFim
      * @return 
      */
-    Lista sublista(int indiceInicio, int largura) {
+    Lista sublista(int indiceInicio, int largura){
         Lista novaLista;
-        for (int contador = indiceInicio; contador < largura; contador++)
+        for(int contador=indiceInicio; contador < largura; contador++)
             novaLista.adiciona(vetor[contador]);
         return novaLista;
     }
 
-    int buscaSequencial(T elemento) {
-        for (int contador = 0; contador < tamanho; contador++)
-            if (elemento == vetor[contador])return contador;
+    int buscaSequencial(T elemento){
+        for(int contador=0; contador < tamanho; contador++)
+            if(elemento == vetor[contador])return contador;
         return -1;
     }
-    
+
     void limpa(){
-        tamanho = 0;
-        vetor = new T[++tamanho];
+        tamanho=0;
+        vetor=new T[++tamanho];
     }
 
 private:
 
-    void SelectionSort() {
+    void SelectionSort(){
         int min, aux;
 
-        for (int i = 0; i < tamanho - 1; i++) {
-            min = i;
+        for(int i=0; i < tamanho - 1; i++){
+            min=i;
 
-            for (int j = i + 1; j < tamanho; j++)
-                if (vetor[j] < vetor[min])
-                    min = j;
+            for(int j=i + 1; j < tamanho; j++)
+                if(vetor[j] < vetor[min])
+                    min=j;
 
-            if (min != i) {
-                aux = vetor[min];
-                vetor[min] = vetor[i];
-                vetor[i] = aux;
+            if(min != i){
+                aux=vetor[min];
+                vetor[min]=vetor[i];
+                vetor[i]=aux;
             }
         }
     }

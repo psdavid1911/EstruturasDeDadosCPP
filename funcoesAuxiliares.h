@@ -3,13 +3,13 @@
 
 #include "bibliotecas.h"
 
-void resposta() {
+void resposta(){
     cout << "----------------------------------------------------" << endl
             << "RESPOSTA" << endl
             << "----------------------------------------------------" << endl;
 }
 
-void entradas(string s) {
+void entradas(string s){
     cout << "----------------------------------------------------" << endl
             << "TITULO DA QUESTAO" << endl
             << "----------------------------------------------------" << endl;
@@ -19,32 +19,32 @@ void entradas(string s) {
             << "----------------------------------------------------" << endl;
 }
 
-void entradas() {
+void entradas(){
     cout << "----------------------------------------------------" << endl
             << "ENTRADAS" << endl
             << "----------------------------------------------------" << endl;
 }
 
-template <typename T> string NumberToString(T Number) {
+template <typename T> string NumberToString(T Number){
     ostringstream ss;
     ss << Number;
     return ss.str();
 }
 
-template <typename T> T StringToNumber(const string &Text) {
+template <typename T> T StringToNumber(const string &Text){
     istringstream ss(Text);
     T result;
     return ss >> result ? result : 0;
 }
 
-int leInteiro() { // 3 linhas, PQP!
+int leInteiro(){ // 3 linhas, PQP!
     cout << "Inteiro > ";
     int valor;
     cin >> valor;
     return valor;
 }
 
-double leDouble() {
+double leDouble(){
     cout << "Double > ";
     double valor;
     cin >> valor;
@@ -65,23 +65,23 @@ string leString(){
     return valor;
 }
 
-void imprime(string s) {
+void imprime(string s){
     cout << s;
 }
 
-class Inteiro {
+class Inteiro{
 public:
     int valor;
 
-    Inteiro() {
+    Inteiro(){
 
     }
 
-    Inteiro(int v) {
-        valor = v;
+    Inteiro(int v){
+        valor=v;
     }
 
-    string paraString() {
+    string paraString(){
         return NumberToString<int>(valor);
     }
 };

@@ -43,10 +43,10 @@ int main(){
                 << "OUTRAS OPCOES" << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
                 << endl;
-        
-        
-        
-        
+
+
+
+
         switch(leInteiro()){
             case 1:
                 Lista01Questao01();

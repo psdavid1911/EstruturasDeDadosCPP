@@ -3,9 +3,9 @@
 
 #include "bibliotecas.h"
 
-void Lista02Questao06() {
+void Lista02Questao06(){
     Agenda agenda;
-    while (true) {
+    while(true){
         cout
                 << "----------------------------------------------------" << endl
                 << "MENU INTERNO" << endl
@@ -17,8 +17,8 @@ void Lista02Questao06() {
                 << "4. Exibir todos os registros" << endl
                 << "Qualquer outra opcao ele sai..." << endl;
 
-        int opcao = leInteiro();
-        switch (opcao) {
+        int opcao=leInteiro();
+        switch(opcao){
             case 1:
                 agenda.promptAdiciona();
                 break;

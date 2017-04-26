@@ -13,43 +13,43 @@
 
 using namespace std;
 
-template <class T> class Pilha {
+template <class T> class Pilha{
 public:
     Lista<T> pilha;
 
-    Pilha() {
+    Pilha(){
     }
 
-    void empilha(T conteudo) {
+    void empilha(T conteudo){
         pilha.adiciona(conteudo);
     }
 
-    T desempilha() {
-        T elemento = pilha.pega(pilha.tamanho - 1);
+    T desempilha(){
+        T elemento=pilha.pega(pilha.tamanho - 1);
         pilha.removeIndice(pilha.tamanho - 1);
         return elemento;
     }
 
-    int tamanho() {
+    int tamanho(){
         return pilha.tamanho;
     }
 
-    int ultimoIndice() {
-        return (pilha.tamanho - 1);
+    int ultimoIndice(){
+        return(pilha.tamanho - 1);
     }
-    
+
     bool estaVazia(){
-        return pilha.tamanho==0;
+        return pilha.tamanho == 0;
     }
-    
+
     bool naoEstaVazia(){
         return !estaVazia();
     }
-    
+
     T pega(int i){
         return pilha.pega(i);
     }
-    
+
 };
 
 #endif
