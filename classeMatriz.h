@@ -149,4 +149,3 @@ public:
 };
 
 #endif /* CLASSEMATRIZ_H */
-
