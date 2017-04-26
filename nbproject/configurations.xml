@@ -17,6 +17,7 @@
       <itemPath>Lista02Questao06.h</itemPath>
       <itemPath>Lista03Questao01.h</itemPath>
       <itemPath>Lista04Questao01.h</itemPath>
+      <itemPath>Testes.h</itemPath>
       <itemPath>bibliotecas.h</itemPath>
       <itemPath>classeExpressoes.h</itemPath>
       <itemPath>classeLista.h</itemPath>
@@ -82,6 +83,8 @@
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Testes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeExpressoes.h" ex="false" tool="3" flavor2="0">
@@ -144,6 +147,8 @@
       <item path="Lista03Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Testes.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
       </item>

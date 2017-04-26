@@ -18,6 +18,7 @@ using namespace std; // Para não precisar escrever std::cout
 #include "classePilha.h"
 #include "Lista02Questao05.h"
 #include "classeExpressoes.h"
+#include "Testes.h"
 
 #endif /* BIBLIOTECAS_H */
 

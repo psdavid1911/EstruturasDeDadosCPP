@@ -41,6 +41,7 @@ int main(){
                 << "LISTA 04" << endl
                 << "13" << ". Questao 01 da lista 04" << endl
                 << "OUTRAS OPCOES" << endl
+                << "98" << ". Arquivo criado exclusivamente para testes." << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
                 << endl;
 
@@ -86,6 +87,9 @@ int main(){
                 break;
             case 13:
                 Lista04Questao01();
+                break;
+            case 98:
+                Testes();
                 break;
             default:
                 exit(0);

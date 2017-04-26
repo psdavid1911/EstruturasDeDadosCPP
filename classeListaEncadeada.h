@@ -4,10 +4,8 @@
 #include "bibliotecas.h"
 
 template <class T> class ListaEncadeada{
-private:
-    int tamanho;
-
 public:
+    int tamanho;
 
     struct no{
         T conteudo;
@@ -18,10 +16,6 @@ public:
         tamanho=0;
         inicio=(no*)malloc(sizeof(no));
         inicio->proximo=NULL;
-    }
-
-    int tamanho(){
-        return tamanho;
     }
 
     void adicionaAoInicio(T conteudo){
@@ -108,11 +102,18 @@ public:
 
     }
 
-    void pega(T conteudo){
-
+    /**
+     * Apaga assim que pega.
+     * @return 
+     */
+    T pega(){
+        T conteudo=inicio->conteudo;
+        apagaPrimeiro();
+        return conteudo;
     }
 
     bool contem(T conteudo){
+        no *temp;
         bool resultado=false;
         temp=inicio;
         while(temp->conteudo != NULL){
