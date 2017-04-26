@@ -21,9 +21,6 @@ public:
 
     Expressao(string exp) {
         this->exp = exp;
-        //        for (int x = 0; x < exp.length(); x++) {
-        //            expressao.empilha(exp.at(x));
-        //        }
     }
 
     double pilhaDeParenteses() {
