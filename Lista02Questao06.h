@@ -1,9 +1,7 @@
 #ifndef LISTA02QUESTAO06_H
 #define LISTA02QUESTAO06_H
 
-#include "Lista02Questao05.h"
-#include "funcoesAuxiliares.h"
-#include "classeLista.h"
+#include "bibliotecas.h"
 
 void Lista02Questao06() {
     Agenda agenda;

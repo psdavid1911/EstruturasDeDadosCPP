@@ -1,9 +1,7 @@
 #ifndef LISTA01QUESTAO05_H
 #define LISTA01QUESTAO05_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
-using namespace std;
+#include "bibliotecas.h"
 
 void Lista01Questao05() {
     string questao = "5. Escreva um algoritmo que receba um vetor de N elementos e verifique a existência de\n" \

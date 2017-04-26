@@ -26,62 +26,73 @@ public:
         //        }
     }
 
-    int pilhaDeParenteses() {
-        int posicaoInicial = 0;
-        int posicaoFinal = exp.find(')'); // primeiro fechamento
-        for (int x = posicaoFinal; x >= 0; x--) {
-            if (exp.at(x) == '(') {
-                posicaoInicial = x; // Seu par de abertura
-                break;
-            }
-        }
-        int tamanhoDaExpressao = posicaoFinal - posicaoInicial;
-        calculaexpressao(exp.substr(posicaoInicial + 1, tamanhoDaExpressao - 1));
+    double pilhaDeParenteses() {
+        return pilhaDeParenteses(exp);
     }
 
-    int calculaexpressao(string expressao) {
+    double pilhaDeParenteses(string expressao) {
+        cout << "Entrou >| " << expressao << endl;
+        int posicaoInicial = 0;
+        int tamanhoDaExpressao = expressao.length();
+        int posicaoFinal = expressao.find(')'); // primeiro fechamento
+        if (posicaoFinal != -1) {
+            for (int x = posicaoFinal; x >= 0; x--) {
+                if (expressao.at(x) == '(') {
+                    posicaoInicial = x; // Seu par de abertura
+                    break;
+                }
+            }
+            tamanhoDaExpressao = posicaoFinal - posicaoInicial;
+            return pilhaDeParenteses(exp.replace(posicaoInicial, tamanhoDaExpressao+1,to_string(pilhaDeParenteses(exp.substr(posicaoInicial + 1, tamanhoDaExpressao - 1)))));
+        } else return calculaexpressao(expressao.substr(posicaoInicial, tamanhoDaExpressao));
+    }
+
+    double calculaexpressao(string expressao) {
+        cout << "Entrou para calcular >| " << expressao << endl;
         Pilha<string> pilha;
         int inicio = 0;
+        string temp;
 
         // Monta a pilha de operadores e operandos
         for (int x = 0; x < expressao.length(); x++) {
             switch (expressao.at(x)) {
                 case '^':
-                    pilha.empilha(expressao.substr(inicio, x - inicio - 1));
+                    pilha.empilha(temp);
+                    temp = "";
                     pilha.empilha("^");
                     inicio = x + 1;
                     break;
                 case '*':
-                    pilha.empilha(expressao.substr(inicio, x - inicio - 1));
+                    pilha.empilha(temp);
+                    temp = "";
                     pilha.empilha("*");
                     inicio = x + 1;
                     break;
                 case '/':
-                    pilha.empilha(expressao.substr(inicio, x - inicio - 1));
+                    pilha.empilha(temp);
+                    temp = "";
                     pilha.empilha("/");
                     inicio = x + 1;
                     break;
                 case '+':
-                    pilha.empilha(expressao.substr(inicio, x - inicio - 1));
+                    pilha.empilha(temp);
+                    temp = "";
                     pilha.empilha("+");
                     inicio = x + 1;
                     break;
                 case '-':
-                    pilha.empilha(expressao.substr(inicio, x - inicio - 1));
+                    pilha.empilha(temp);
+                    temp = "";
                     pilha.empilha("-");
                     inicio = x + 1;
                     break;
                 default:
+                    temp += expressao.at(x);
                     break;
             }
         }
+        pilha.empilha(temp); // o ultimo valor que falta inserir
 
-        // Mostra conteudo da pilha
-        for(int i=0; i< pilha.tamanho(); i++){
-            cout << pilha.pega(i) << " ";
-        }
-        cout << endl;
-        
         // Esvazia pilha com o resultado
         while (pilha.tamanho() > 1) {
             double temp = 0;
@@ -90,31 +101,35 @@ public:
             char operador = pilha.desempilha().at(0);
             double operando2 = atof(pilha.desempilha().c_str());
 
+            cout << "operacao" << " " << operando2 << ":" << operador << ":" << operando1 << endl;
+
             switch (operador) {
                 case '^':
-                    temp = pow(operando1, operando2);
+                    temp = pow(operando2, operando1);
                     pilha.empilha(to_string<double>(temp));
                     break;
                 case '*':
-                    temp = (double) operando1 * operando2;
+                    temp = (double) operando2 * operando1;
                     pilha.empilha(to_string<double>(temp));
                     break;
                 case '/':
-                    temp = (double) operando1 / operando2;
+                    temp = (double) operando2 / operando1;
                     pilha.empilha(to_string<double>(temp));
                     break;
                 case '+':
-                    temp = (double) operando1 + operando2;
+                    temp = (double) operando2 + operando1;
                     pilha.empilha(to_string<double>(temp));
                     break;
                 case '-':
-                    temp = (double) operando1 - operando2;
+                    temp = (double) operando2 - operando1;
                     pilha.empilha(to_string<double>(temp));
                     break;
                 default:
                     break;
             }
         }
+
+        return atof(pilha.desempilha().c_str());
     }
 
     template <typename Tipo>

@@ -1,7 +1,7 @@
 #ifndef LISTA02QUESTAO01_H
 #define LISTA02QUESTAO01_H
 
-#include "classeMatriz.h"
+#include "bibliotecas.h"
 
 void Lista02Questao01() {
     Matriz<int> a(5, 4);

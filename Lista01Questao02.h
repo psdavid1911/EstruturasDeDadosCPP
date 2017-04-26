@@ -1,9 +1,7 @@
 #ifndef LISTA01QUESTAO02_H
 #define LISTA01QUESTAO02_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
-using namespace std;
+#include "bibliotecas.h"
 
 void Lista01Questao02() {
     string questao = "2.Leia um vetor X de N elementos e que:\n" \

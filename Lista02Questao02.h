@@ -1,8 +1,7 @@
 #ifndef LISTA02QUESTAO02_H
 #define LISTA02QUESTAO02_H
 
-#include "funcoesAuxiliares.h"
-#include "classeLista.h"
+#include "bibliotecas.h"
 
 class Funcionario {
 public:

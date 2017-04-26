@@ -1,9 +1,7 @@
 #ifndef LISTA01QUESTAO04_H
 #define LISTA01QUESTAO04_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
-using namespace std;
+#include "bibliotecas.h"
 
 void Lista01Questao04() { // crivo de Eratóstenes
     string questao = "Desenvolva um algoritmo que, determine se um determinado número N informado é\n" \

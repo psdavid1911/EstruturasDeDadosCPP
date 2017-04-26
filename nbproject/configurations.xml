@@ -17,7 +17,9 @@
       <itemPath>Lista02Questao06.h</itemPath>
       <itemPath>Lista03Questao01.h</itemPath>
       <itemPath>Lista04Questao01.h</itemPath>
+      <itemPath>bibliotecas.h</itemPath>
       <itemPath>classeLista.h</itemPath>
+      <itemPath>classeListaEncadeada.h</itemPath>
       <itemPath>classeMatriz.h</itemPath>
       <itemPath>classePilha.h</itemPath>
       <itemPath>expressoesMatematicas.h</itemPath>
@@ -81,7 +83,11 @@
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeListaEncadeada.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -142,7 +148,11 @@
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeListaEncadeada.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -1,7 +1,7 @@
 #ifndef LISTA02QUESTAO05_H
 #define LISTA02QUESTAO05_H
 
-#include "classeLista.h"
+#include "bibliotecas.h"
 
 class RegistroDeAgenda {
 public:
@@ -144,7 +144,7 @@ public:
         string nomePesquisado = leString();
         int posicaoDoRegistro = busca(nomePesquisado);
         RegistroDeAgenda* r = agenda.vetor;
-        r+= posicaoDoRegistro;
+        r += posicaoDoRegistro;
         r->imprime();
     }
 };

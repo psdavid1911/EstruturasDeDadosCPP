@@ -1,8 +1,7 @@
 #ifndef LISTA02QUESTAO03_H
 #define LISTA02QUESTAO03_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
+#include "bibliotecas.h"
 
 class Aluno {
 public:

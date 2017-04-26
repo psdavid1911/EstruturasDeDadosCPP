@@ -1,15 +1,7 @@
-/* 
- * File:   Lista03Questao01.h
- * Author: david
- *
- * Created on 12 de Abril de 2017, 19:04
- */
-
 #ifndef LISTA03QUESTAO01_H
 #define LISTA03QUESTAO01_H
 
-#include <cstdlib> // malloc free
-#include <stdio.h> // printf (NULL ?)
+#include "bibliotecas.h"
 
 /**
  * ESTRUTURA FORNECIDA PELO PROFESSOR

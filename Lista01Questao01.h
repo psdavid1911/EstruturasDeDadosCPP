@@ -1,9 +1,7 @@
 #ifndef LISTA01QUESTAO01_H
 #define LISTA01QUESTAO01_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
-using namespace std;
+#include "bibliotecas.h"
 
 void Lista01Questao01() {
     string questao = "1. Leia uma lista de no máximo 100 números inteiros, carregando-os em um vetor.\n" \

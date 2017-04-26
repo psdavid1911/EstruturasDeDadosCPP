@@ -1,4 +1,7 @@
-#include "funcoesAuxiliares.h"
+
+// INCLUE TUDAO, MENOS AS QUESTÕES PROPRIAMENTE DITAS
+#include "bibliotecas.h"
+// INCLUE AS QUESTÕES
 #include "Lista01Questao01.h"
 #include "Lista01Questao02.h"
 #include "Lista01Questao03.h"
@@ -12,8 +15,6 @@
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
-
-using namespace std;
 
 int main(){
     while(true){

@@ -1,16 +1,7 @@
 #ifndef FUNCOESAUXILIARES_H
 #define FUNCOESAUXILIARES_H
 
-#include <iostream>
-#include <cstdlib>
-#include <math.h>
-#include <string>
-#include <iomanip>
-#include <locale>
-#include <sstream>
-#include <string>
-
-using namespace std;
+#include "bibliotecas.h"
 
 void resposta() {
     cout << "----------------------------------------------------" << endl

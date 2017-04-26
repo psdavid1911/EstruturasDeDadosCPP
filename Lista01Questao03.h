@@ -1,9 +1,7 @@
 #ifndef LISTA01QUESTAO03_H
 #define LISTA01QUESTAO03_H
 
-#include "classeLista.h"
-#include "funcoesAuxiliares.h"
-using namespace std;
+#include "bibliotecas.h"
 
 void Lista01Questao03() {
     string questao = "Leia um vetor A e um vetor B, ambos com N elementos e que intercale estes vetores A e \n" \
