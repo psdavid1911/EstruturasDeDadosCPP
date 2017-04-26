@@ -17,7 +17,7 @@ using namespace std; // Para não precisar escrever std::cout
 #include "classeMatriz.h"
 #include "classePilha.h"
 #include "Lista02Questao05.h"
-#include "expressoesMatematicas.h"
+#include "classeExpressoes.h"
 
 #endif /* BIBLIOTECAS_H */
 
