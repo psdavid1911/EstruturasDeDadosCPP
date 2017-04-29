@@ -1,5 +1,4 @@
-#ifndef EXPRESSOESMATEMATICAS_H
-#define EXPRESSOESMATEMATICAS_H
+#pragma once
 
 #include <iostream>
 #include <cstdlib>
@@ -138,7 +137,3 @@ public:
         return sstr.str();
     }
 };
-
-
-#endif /* EXPRESSOESMATEMATICAS_H */
-

@@ -1,6 +1,4 @@
-#ifndef LISTA04QUESTAO01_H
-#define LISTA04QUESTAO01_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista04Questao01(){
@@ -10,6 +8,3 @@ void Lista04Questao01(){
     Expressao<double> manipulador(exp);
     cout << "Resposta: " << manipulador.pilhaDeParenteses() << endl;
 }
-
-#endif /* LISTA04QUESTAO01_H */
-

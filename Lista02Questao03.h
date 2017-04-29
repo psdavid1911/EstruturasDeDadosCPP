@@ -1,6 +1,4 @@
-#ifndef LISTA02QUESTAO03_H
-#define LISTA02QUESTAO03_H
-
+#pragma once
 #include "bibliotecas.h"
 
 class Aluno{
@@ -46,4 +44,3 @@ void Lista02Questao04(){
         cout << endl;
     }
 }
-#endif

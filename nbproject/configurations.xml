@@ -114,6 +114,8 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>11</standard>
+          <warningLevel>3</warningLevel>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>

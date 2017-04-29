@@ -1,5 +1,4 @@
-#ifndef CLASSEMATRIZ_H
-#define CLASSEMATRIZ_H
+#pragma once
 
 #include <iostream>
 #include <cstdlib>
@@ -147,5 +146,3 @@ public:
     }
 
 };
-
-#endif /* CLASSEMATRIZ_H */

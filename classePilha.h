@@ -1,5 +1,4 @@
-#ifndef CLASSEPILHA_H
-#define CLASSEPILHA_H
+#pragma once
 
 #include <iostream>
 #include <cstdlib>
@@ -51,5 +50,3 @@ public:
     }
 
 };
-
-#endif

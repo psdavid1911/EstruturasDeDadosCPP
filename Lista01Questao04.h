@@ -1,6 +1,4 @@
-#ifndef LISTA01QUESTAO04_H
-#define LISTA01QUESTAO04_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista01Questao04(){ // crivo de Eratóstenes
@@ -30,5 +28,3 @@ void Lista01Questao04(){ // crivo de Eratóstenes
     cout << "Valor: " << lista.vetor[busca] << endl;
     cout << "Direita: " << lista.vetor[busca + 1] << "   " << lista.vetor[busca + 2] << endl;
 }
-#endif /* LISTA01QUESTAO01_H */
-

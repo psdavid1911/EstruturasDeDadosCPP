@@ -1,6 +1,4 @@
-#ifndef LISTA03QUESTAO01_H
-#define LISTA03QUESTAO01_H
-
+#pragma once
 #include "bibliotecas.h"
 
 /**
@@ -209,7 +207,3 @@ int Lista03Questao01(){
      */
     return 0;
 }
-
-#endif /* LISTA03QUESTAO01_H */
-
-

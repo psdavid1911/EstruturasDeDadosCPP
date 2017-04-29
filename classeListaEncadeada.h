@@ -1,6 +1,4 @@
-#ifndef CLASSELISTAENCADEADA_H
-#define CLASSELISTAENCADEADA_H
-
+#pragma once
 #include "bibliotecas.h"
 
 template <class T> class ListaEncadeada{
@@ -137,6 +135,3 @@ public:
 
 
 };
-
-#endif /* CLASSELISTAENCADEADA_H */
-

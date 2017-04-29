@@ -1,6 +1,4 @@
-#ifndef LISTA01QUESTAO02_H
-#define LISTA01QUESTAO02_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista01Questao02(){
@@ -31,5 +29,5 @@ void Lista01Questao02(){
     cout << "Elemento " << elementoBuscado << " existe em x (INDET. SE POS. N EXISTE) ? " << existencia << endl;
     cout << "Maior: " << x.maior() << " menor: " << x.menor() << endl;
 }
-#endif /* LISTA01QUESTAO02_H */
+
 

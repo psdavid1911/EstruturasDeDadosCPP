@@ -1,6 +1,4 @@
-#ifndef LISTA02QUESTAO06_H
-#define LISTA02QUESTAO06_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista02Questao06(){
@@ -38,7 +36,3 @@ void Lista02Questao06(){
         }
     }
 }
-#endif
-
-// Elegante 
-// Boa prática de programação

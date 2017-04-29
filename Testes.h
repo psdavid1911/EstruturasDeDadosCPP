@@ -1,6 +1,4 @@
-#ifndef TESTES_H
-#define TESTES_H
-
+#pragma once
 #include "bibliotecas.h"
 #include "classeListaEncadeada.h"
 
@@ -13,7 +11,3 @@ void Testes(){
 //    cout << lista.pega() << endl;
 //    lista.imprimeStruct();
 }
-
-
-#endif /* TESTES_H */
-

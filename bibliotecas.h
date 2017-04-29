@@ -1,6 +1,4 @@
-#ifndef BIBLIOTECAS_H
-#define BIBLIOTECAS_H
-
+#pragma once
 #include <cstdlib>   // malloc free // compatibilidade do C++
 #include <stdio.h>   // printf (NULL ?)
 #include <iostream>  // cout, cin e etc...
@@ -19,6 +17,3 @@ using namespace std; // Para não precisar escrever std::cout
 #include "Lista02Questao05.h"
 #include "classeExpressoes.h"
 #include "Testes.h"
-
-#endif /* BIBLIOTECAS_H */
-

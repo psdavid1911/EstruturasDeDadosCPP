@@ -1,6 +1,4 @@
-#ifndef LISTA01QUESTAO03_H
-#define LISTA01QUESTAO03_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista01Questao03(){
@@ -32,6 +30,3 @@ void Lista01Questao03(){
     }
     c.imprime();
 }
-
-#endif /* LISTA01QUESTAO03_H */
-

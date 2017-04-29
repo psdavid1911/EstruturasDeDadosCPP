@@ -1,6 +1,4 @@
-#ifndef LISTA02QUESTAO02_H
-#define LISTA02QUESTAO02_H
-
+#pragma once
 #include "bibliotecas.h"
 
 class Funcionario{
@@ -71,4 +69,3 @@ void Lista02Questao02(){
             << " Numero de pecas: " << maiorValor
             << endl;
 }
-#endif

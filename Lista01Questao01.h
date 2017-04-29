@@ -1,5 +1,4 @@
-#ifndef LISTA01QUESTAO01_H
-#define LISTA01QUESTAO01_H
+#pragma once
 
 #include "bibliotecas.h"
 
@@ -37,5 +36,5 @@ void Lista01Questao01(){
         soma+=listaDeImparesMaioresQueCinquenta.vetor[contador];
     cout << "(Fica indeterminado se não existirem valores) Media: " << (float)soma / listaDeImparesMaioresQueCinquenta.tamanho << endl;
 }
-#endif /* LISTA01QUESTAO01_H */
+
 

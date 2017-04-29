@@ -1,6 +1,4 @@
-#ifndef FUNCOESAUXILIARES_H
-#define FUNCOESAUXILIARES_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void resposta(){
@@ -85,6 +83,3 @@ public:
         return NumberToString<int>(valor);
     }
 };
-
-#endif /* FUNCOESAUXILIARES_H */
-

@@ -1,6 +1,4 @@
-#ifndef CLASSELISTA_H
-#define CLASSELISTA_H
-
+#pragma once
 #include "bibliotecas.h"
 
 template <class T> class Lista{
@@ -167,5 +165,3 @@ private:
         }
     }
 };
-
-#endif

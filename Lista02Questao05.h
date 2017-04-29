@@ -1,6 +1,4 @@
-#ifndef LISTA02QUESTAO05_H
-#define LISTA02QUESTAO05_H
-
+#pragma once
 #include "bibliotecas.h"
 
 class RegistroDeAgenda{
@@ -148,6 +146,3 @@ public:
         r->imprime();
     }
 };
-
-#endif /* LISTA02QUESTAO05_H */
-

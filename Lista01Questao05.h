@@ -1,6 +1,4 @@
-#ifndef LISTA01QUESTAO05_H
-#define LISTA01QUESTAO05_H
-
+#pragma once
 #include "bibliotecas.h"
 
 void Lista01Questao05(){
@@ -43,6 +41,3 @@ void Lista01Questao05(){
     cout << "Indice do elemento 2 da busca binaria(-1 se não existir): " << indiceDoElemento << endl;
     cout << "Elemento: " << a.vetor[indiceDoElemento] << endl;
 }
-
-#endif /* LISTA01QUESTAO05_H */
-
