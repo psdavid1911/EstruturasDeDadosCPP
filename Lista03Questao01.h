@@ -20,10 +20,10 @@ struct box{
 void imprimeStruct(){
     temp=inicio;
     while(temp != 0){ // deferente de NULL
-        printf("Char: %c | Prox: %p\n", temp->conteudo, temp->proximo);
+        cout << "Char: %c | Prox: %p\n" << temp->conteudo << temp->proximo;
         temp=temp->proximo;
     }
-    printf("\n");
+    cout << "\n";
 }
 
 int Lista03Questao01(){
@@ -144,7 +144,7 @@ int Lista03Questao01(){
     /**
      * Questao 12 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA
      */
-    printf("TRATAMENTO DE ERROS:  QUESTAO AMBIGUA DADO OS VALORES PREEXISTENTES, IMPOSSIVEL!!\n\n");
+    cout << "TRATAMENTO DE ERROS:  QUESTAO AMBIGUA DADO OS VALORES PREEXISTENTES, IMPOSSIVEL!!\n\n";
     /**
      * Questao 13 
      */
