@@ -107,11 +107,6 @@ ${OBJECTDIR}/Lista02Questao04.h.gch: Lista02Questao04.h
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao04.h
 
-${OBJECTDIR}/Lista02Questao05.h.gch: Lista02Questao05.h
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao05.h
-
 ${OBJECTDIR}/Lista02Questao06.h.gch: Lista02Questao06.h
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -126,11 +121,6 @@ ${OBJECTDIR}/Lista04Questao01.h.gch: Lista04Questao01.h
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista04Questao01.h
-
-${OBJECTDIR}/Testes.h.gch: Testes.h
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Testes.h
 
 ${OBJECTDIR}/bibliotecas.h.gch: bibliotecas.h
 	${MKDIR} -p ${OBJECTDIR}

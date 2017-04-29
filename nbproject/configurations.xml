@@ -13,12 +13,11 @@
       <itemPath>Lista02Questao02.h</itemPath>
       <itemPath>Lista02Questao03.h</itemPath>
       <itemPath>Lista02Questao04.h</itemPath>
-      <itemPath>Lista02Questao05.h</itemPath>
       <itemPath>Lista02Questao06.h</itemPath>
       <itemPath>Lista03Questao01.h</itemPath>
       <itemPath>Lista04Questao01.h</itemPath>
-      <itemPath>Testes.h</itemPath>
       <itemPath>bibliotecas.h</itemPath>
+      <itemPath>classeAgenda.h</itemPath>
       <itemPath>classeExpressoes.h</itemPath>
       <itemPath>classeLista.h</itemPath>
       <itemPath>classeListaEncadeada.h</itemPath>
@@ -75,17 +74,15 @@
       </item>
       <item path="Lista02Questao04.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Lista02Questao05.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Lista02Questao06.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista03Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Testes.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeAgenda.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeExpressoes.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -169,11 +166,6 @@
           <architecture>0</architecture>
         </ccTool>
       </item>
-      <item path="Lista02Questao05.h" ex="false" tool="1" flavor2="11">
-        <ccTool>
-          <architecture>0</architecture>
-        </ccTool>
-      </item>
       <item path="Lista02Questao06.h" ex="false" tool="1" flavor2="11">
         <ccTool>
           <architecture>0</architecture>
@@ -189,15 +181,12 @@
           <architecture>0</architecture>
         </ccTool>
       </item>
-      <item path="Testes.h" ex="false" tool="1" flavor2="11">
-        <ccTool>
-          <architecture>0</architecture>
-        </ccTool>
-      </item>
       <item path="bibliotecas.h" ex="false" tool="1" flavor2="11">
         <ccTool>
           <architecture>0</architecture>
         </ccTool>
+      </item>
+      <item path="classeAgenda.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeExpressoes.h" ex="false" tool="1" flavor2="11">
         <ccTool>

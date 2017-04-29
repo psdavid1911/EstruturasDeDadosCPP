@@ -1,4 +1,3 @@
-
 // INCLUE TUDAO, MENOS AS QUESTÕES PROPRIAMENTE DITAS
 #include "bibliotecas.h"
 // INCLUE AS QUESTÕES
@@ -11,7 +10,6 @@
 #include "Lista02Questao02.h"
 #include "Lista02Questao03.h" // É a questão 4
 #include "Lista02Questao04.h"
-#include "Lista02Questao05.h"
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
@@ -89,7 +87,7 @@ int main(){
                 Lista04Questao01();
                 break;
             case 98:
-                Testes();
+                // Usarei o arquivo funcoes para isto
                 break;
             default:
                 exit(0);

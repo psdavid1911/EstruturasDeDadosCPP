@@ -1,5 +1,4 @@
 #pragma once
-
 /**
  * Básicos
  */
@@ -21,6 +20,5 @@ using namespace std; // Para não precisar escrever std::cout
 #include "classeLista.h"
 #include "classeMatriz.h"
 #include "classePilha.h"
-#include "Lista02Questao05.h"
+#include "classeAgenda.h"
 #include "classeExpressoes.h"
-#include "Testes.h"
