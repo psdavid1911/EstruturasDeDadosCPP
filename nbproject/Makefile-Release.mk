@@ -62,6 +62,111 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/estruturasdedadoscpp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/estruturasdedadoscpp ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/Lista01Questao01.h.gch: Lista01Questao01.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista01Questao01.h
+
+${OBJECTDIR}/Lista01Questao02.h.gch: Lista01Questao02.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista01Questao02.h
+
+${OBJECTDIR}/Lista01Questao03.h.gch: Lista01Questao03.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista01Questao03.h
+
+${OBJECTDIR}/Lista01Questao04.h.gch: Lista01Questao04.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista01Questao04.h
+
+${OBJECTDIR}/Lista01Questao05.h.gch: Lista01Questao05.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista01Questao05.h
+
+${OBJECTDIR}/Lista02Questao01.h.gch: Lista02Questao01.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao01.h
+
+${OBJECTDIR}/Lista02Questao02.h.gch: Lista02Questao02.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao02.h
+
+${OBJECTDIR}/Lista02Questao03.h.gch: Lista02Questao03.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao03.h
+
+${OBJECTDIR}/Lista02Questao04.h.gch: Lista02Questao04.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao04.h
+
+${OBJECTDIR}/Lista02Questao05.h.gch: Lista02Questao05.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao05.h
+
+${OBJECTDIR}/Lista02Questao06.h.gch: Lista02Questao06.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista02Questao06.h
+
+${OBJECTDIR}/Lista03Questao01.h.gch: Lista03Questao01.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista03Questao01.h
+
+${OBJECTDIR}/Lista04Questao01.h.gch: Lista04Questao01.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Lista04Questao01.h
+
+${OBJECTDIR}/Testes.h.gch: Testes.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" Testes.h
+
+${OBJECTDIR}/bibliotecas.h.gch: bibliotecas.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" bibliotecas.h
+
+${OBJECTDIR}/classeExpressoes.h.gch: classeExpressoes.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" classeExpressoes.h
+
+${OBJECTDIR}/classeLista.h.gch: classeLista.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" classeLista.h
+
+${OBJECTDIR}/classeListaEncadeada.h.gch: classeListaEncadeada.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" classeListaEncadeada.h
+
+${OBJECTDIR}/classeMatriz.h.gch: classeMatriz.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" classeMatriz.h
+
+${OBJECTDIR}/classePilha.h.gch: classePilha.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" classePilha.h
+
+${OBJECTDIR}/funcoesAuxiliares.h.gch: funcoesAuxiliares.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -Werror -std=c++14 -MMD -MP -MF "$@.d" -o "$@" funcoesAuxiliares.h
+
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
