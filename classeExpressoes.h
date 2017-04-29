@@ -26,6 +26,8 @@ public:
     double pilhaDeParenteses(){
         return pilhaDeParenteses(exp);
     }
+    
+    
 
     double pilhaDeParenteses(string expressao){
         cout << "Entrou >| " << expressao << endl;
