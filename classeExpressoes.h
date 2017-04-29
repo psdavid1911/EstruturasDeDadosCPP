@@ -1,13 +1,6 @@
 #pragma once
 
-#include <iostream>
-#include <cstdlib>
-#include <math.h>
-#include <string>
-#include <iomanip>
-#include <locale>
-#include <sstream>
-#include <string>
+#include "bibliotecas.h"
 #include "classeLista.h"
 #include "classePilha.h"
 
@@ -45,7 +38,7 @@ public:
 
     double calculaexpressao(string expressao){
         cout << "Entrou para calcular >| " << expressao << endl;
-        Pilha<string> pilha;
+        Pilha<string> pilha{};
         int inicio=0;
         string temp;
 
@@ -91,7 +84,7 @@ public:
 
         // Esvazia pilha com o resultado
         while(pilha.tamanho() > 1){
-            double temp=0;
+            Decimal temp{};
             // Cuidado com essa ordem
             double operando1=atof(pilha.desempilha().c_str());
             char operador=pilha.desempilha().at(0);
@@ -101,24 +94,24 @@ public:
 
             switch(operador){
                 case '^':
-                    temp=pow(operando2, operando1);
-                    pilha.empilha(to_string<double>(temp));
+                    temp.valor=(double)pow(operando2, operando1);
+                    pilha.empilha(temp.paraTexto());
                     break;
                 case '*':
-                    temp=(double)operando2 * operando1;
-                    pilha.empilha(to_string<double>(temp));
+                    temp.valor=(double)operando2 * operando1;
+                    pilha.empilha(temp.paraTexto());
                     break;
                 case '/':
-                    temp=(double)operando2 / operando1;
-                    pilha.empilha(to_string<double>(temp));
+                    temp.valor=(double)operando2 / operando1;
+                    pilha.empilha(temp.paraTexto());
                     break;
                 case '+':
-                    temp=(double)operando2 + operando1;
-                    pilha.empilha(to_string<double>(temp));
+                    temp.valor=(double)operando2 + operando1;
+                    pilha.empilha(temp.paraTexto());
                     break;
                 case '-':
-                    temp=(double)operando2 - operando1;
-                    pilha.empilha(to_string<double>(temp));
+                    temp.valor=(double)operando2 - operando1;
+                    pilha.empilha(temp.paraTexto());
                     break;
                 default:
                     break;
@@ -126,12 +119,5 @@ public:
         }
 
         return atof(pilha.desempilha().c_str());
-    }
-
-    template <typename Tipo>
-    std::string to_string(Tipo const& value){
-        stringstream sstr;
-        sstr << value;
-        return sstr.str();
     }
 };

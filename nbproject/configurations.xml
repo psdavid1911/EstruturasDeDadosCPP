@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
+      <itemPath>AJUDA</itemPath>
       <itemPath>Lista01Questao01.h</itemPath>
       <itemPath>Lista01Questao02.h</itemPath>
       <itemPath>Lista01Questao03.h</itemPath>
@@ -56,6 +57,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="AJUDA" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Lista01Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Lista01Questao02.h" ex="false" tool="3" flavor2="0">
@@ -121,6 +124,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="AJUDA" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Lista01Questao01.h" ex="false" tool="1" flavor2="11">
         <ccTool>
           <architecture>0</architecture>
