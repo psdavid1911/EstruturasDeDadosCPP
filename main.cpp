@@ -13,6 +13,7 @@
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
+#include "Lista05Questao01.h"
 
 int main(){
     while(true){
@@ -38,6 +39,8 @@ int main(){
                 << "12" << ". Questao 01 da lista 03" << endl
                 << "LISTA 04" << endl
                 << "13" << ". Questao 01 da lista 04" << endl
+                << "LISTA 05" << endl
+                << "14" << ". Questao 01 da lista 04" << endl
                 << "OUTRAS OPCOES" << endl
                 << "98" << ". Arquivo criado exclusivamente para testes." << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
@@ -86,8 +89,11 @@ int main(){
             case 13:
                 Lista04Questao01();
                 break;
+            case 14:
+                Lista05Questao01();
+                break;
             case 98:
-                // Usarei o arquivo funcoes para isto
+                //teste();
                 break;
             default:
                 exit(0);

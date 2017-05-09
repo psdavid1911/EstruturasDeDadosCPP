@@ -17,12 +17,17 @@
       <itemPath>Lista02Questao06.h</itemPath>
       <itemPath>Lista03Questao01.h</itemPath>
       <itemPath>Lista04Questao01.h</itemPath>
+      <itemPath>Lista05Questao01.h</itemPath>
       <itemPath>bibliotecas.h</itemPath>
       <itemPath>classeAgenda.h</itemPath>
+      <itemPath>classeDecimal.h</itemPath>
       <itemPath>classeExpressoes.h</itemPath>
+      <itemPath>classeFila.h</itemPath>
+      <itemPath>classeInteiro.h</itemPath>
       <itemPath>classeLista.h</itemPath>
       <itemPath>classeListaEncadeada.h</itemPath>
       <itemPath>classeMatriz.h</itemPath>
+      <itemPath>classeNumero.h</itemPath>
       <itemPath>classePilha.h</itemPath>
       <itemPath>funcoesAuxiliares.h</itemPath>
     </logicalFolder>
@@ -83,17 +88,27 @@
       </item>
       <item path="Lista04Questao01.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Lista05Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bibliotecas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeAgenda.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="classeDecimal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeExpressoes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeFila.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeInteiro.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeListaEncadeada.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeNumero.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classePilha.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -186,6 +201,8 @@
           <architecture>0</architecture>
         </ccTool>
       </item>
+      <item path="Lista05Questao01.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="bibliotecas.h" ex="false" tool="1" flavor2="11">
         <ccTool>
           <architecture>0</architecture>
@@ -193,10 +210,16 @@
       </item>
       <item path="classeAgenda.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="classeDecimal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="classeExpressoes.h" ex="false" tool="1" flavor2="11">
         <ccTool>
           <architecture>0</architecture>
         </ccTool>
+      </item>
+      <item path="classeFila.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeInteiro.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeLista.h" ex="false" tool="1" flavor2="11">
         <ccTool>
@@ -212,6 +235,8 @@
         <ccTool>
           <architecture>0</architecture>
         </ccTool>
+      </item>
+      <item path="classeNumero.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classePilha.h" ex="false" tool="1" flavor2="11">
         <ccTool>

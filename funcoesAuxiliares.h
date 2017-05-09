@@ -70,46 +70,16 @@ void imprime(string s){
 class Texto{
 public:
     string conteudo;
-    
+
     Texto(string cadeia){
-        conteudo = cadeia;
+        conteudo=cadeia;
     }
-    
+
     double pegaDouble(){
-        
+
     }
 };
 
-class Inteiro{
-public:
-    int valor;
 
-    Inteiro(){
 
-    }
 
-    Inteiro(int v){
-        valor=v;
-    }
-
-    string paraString(){
-        return NumberToString<int>(valor);
-    }
-};
-
-class Decimal{
-public:
-    double valor;
-
-    Decimal(){
-
-    }
-
-    Decimal(double v){
-        valor=v;
-    }
-
-    string paraTexto(){
-        return NumberToString<double>(valor);
-    }
-};

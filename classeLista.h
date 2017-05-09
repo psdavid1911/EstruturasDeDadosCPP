@@ -10,6 +10,10 @@ public:
         tamanho=0;
     }
 
+    /**
+     * Adiciona sempre ao final...
+     * @param valor
+     */
     void adiciona(T valor){
         T * novoVetor=new T[++tamanho];
         int contador=0;
@@ -22,6 +26,7 @@ public:
     }
 
     void imprime(){
+        if(estaVazia()) return;
         cout << "[";
         int contador=0;
         while(true){
@@ -33,10 +38,18 @@ public:
         cout << "]" << endl;
     }
 
+    bool estaVazia(){
+        if(tamanho <= 0) return true;
+        else return false;
+    }
 
+    bool naoEstaVazia(){
+        return !estaVazia();
+    }
 
-public:
-
+    /**
+     * Método selection sort
+     */
     void ordena(){
         SelectionSort();
     }
@@ -76,6 +89,7 @@ public:
      */
     void remove(T valor){
         Lista novo;
+        if(!existe(valor))return;
         for(int contador=0; contador < tamanho; contador++){
             if(vetor[contador] == valor) continue;
             else novo.adiciona(vetor[contador]);
@@ -86,12 +100,22 @@ public:
 
     void removeIndice(int posicao){
         Lista novo;
+        if(posicaoNaoExiste(posicao)) return;
         for(int contador=0; contador < tamanho; contador++){
             if(contador == posicao) continue;
             else novo.adiciona(vetor[contador]);
         }
         this->vetor=novo.vetor;
         this->tamanho=novo.tamanho;
+    }
+
+    bool posicaoExiste(int posicao){
+        if(tamanho <= 0 && posicao >= tamanho) return false;
+        return true;
+    }
+
+    bool posicaoNaoExiste(int posicao){
+        return !posicaoExiste(posicao);
     }
 
     T menor(){
