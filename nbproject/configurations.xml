@@ -26,6 +26,7 @@
       <itemPath>classeInteiro.h</itemPath>
       <itemPath>classeLista.h</itemPath>
       <itemPath>classeListaEncadeada.h</itemPath>
+      <itemPath>classeListaEncadeada2.h</itemPath>
       <itemPath>classeMatriz.h</itemPath>
       <itemPath>classeNumero.h</itemPath>
       <itemPath>classePilha.h</itemPath>
@@ -105,6 +106,8 @@
       <item path="classeLista.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeListaEncadeada.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="classeListaEncadeada2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -230,6 +233,8 @@
         <ccTool>
           <architecture>0</architecture>
         </ccTool>
+      </item>
+      <item path="classeListaEncadeada2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="classeMatriz.h" ex="false" tool="1" flavor2="11">
         <ccTool>

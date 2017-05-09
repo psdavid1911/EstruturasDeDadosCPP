@@ -1,136 +1,175 @@
-#pragma once
-#include "bibliotecas.h"
+#include <iostream>
+using namespace std;
 
-template <class T> class ListaEncadeada{
-public:
+template <typename T> struct No{
+    T conteudo;
+    No * proximo;
+
+    No(){
+        proximo=0;
+    }
+
+    No(T conteudo){
+        this->conteudo=conteudo;
+        proximo=0;
+    }
+
+    No(T conteudo, No * proximo){
+        this->conteudo=conteudo;
+        this->proximo=proximo;
+    }
+
+};
+
+template <typename T> struct ListaEncadeada{
+    No<T>* inicio;
     int tamanho;
 
-    struct no{
-        T conteudo;
-        no *proximo;
-    } *inicio;
-
     ListaEncadeada(){
+        inicio=new No<T>();
         tamanho=0;
-        inicio=(no*)malloc(sizeof(no));
-        inicio->proximo=NULL;
+    }
+
+    ~ListaEncadeada(){
+
     }
 
     void adicionaAoInicio(T conteudo){
-        no *temp;
-        if(tamanho == 0){
+        if(tamanho == 0) inicio->conteudo=conteudo;
+        else{
+            No<T> * temp=new No<T>(inicio->conteudo, inicio->proximo);
             inicio->conteudo=conteudo;
-        }else{
-            temp=(no*)malloc(sizeof(no)); // INICIALIZA VARIÁVEL TEMPORÁRIA
-            temp->conteudo=conteudo;
-            temp->proximo=inicio;
-            inicio=temp;
+            inicio->proximo=temp;
         }
         tamanho++;
     }
 
     void adicionaAoFinal(T conteudo){
-        no *temp, *temp2;
-        if(tamanho == 0){
-            inicio->conteudo=conteudo;
-        }else{
-            temp=(no*)malloc(sizeof(no));
-            temp->conteudo=conteudo; // criei o nó
-            temp->proximo=NULL; // se ele é o ultimo ele aponta pra null
-            temp2=inicio; // inicializa variavel que vai percorrer a cadeia
-            while(temp2->proximo != NULL) temp2=temp2->proximo; // move-se ate uma unidade antes do ultimo
-            temp2->proximo=temp; // O que era null vira o novo elemento criado
+        if(tamanho == 0) inicio->conteudo=conteudo;
+        else{
+            No<T> * tempInicio=inicio;
+            No<T> * temp=new No<T>(conteudo);
+            while(tempInicio->proximo != 0) tempInicio=tempInicio->proximo; // move-se ate uma unidade antes do ultimo
+            tempInicio->proximo=temp; // O que era null vira o novo elemento criado
         }
         tamanho++;
     }
 
     /**
-     * É necessário que se atente para o valor2 esteja REALMENTE após o valor1
-     * @param conteudo
-     * @param valor1
-     * @param valor2
+     * Se nao existe qualquer dos elementos não faz nada
      */
     void adicionaEntre(T conteudo, T valor1, T valor2){
-        no *temp, *temp2;
-        if(contem(valor1) && contem(valor2)){
-            temp=(no*)malloc(sizeof(no));
-            temp->conteudo=conteudo; // criei o nó
-            // busca 1 - O elemento que sucede o que sera colocado ao meio
-            temp2=inicio; // inicializa variavel que vai percorrer a cadeia
-            while(temp2->proximo->conteudo != valor2) temp2=temp2->proximo; // move-se ate uma unidade antes da do conteudo desejado
-            // continua
-            temp->proximo=temp2->proximo; // armazena o proximo no novo no
-            // busca 2
-            temp2=inicio; // inicializa variavel que vai percorrer a cadeia
-            while(temp2->proximo->conteudo != valor1) temp2=temp2->proximo; // move-se ate uma unidade antes da do conteudo desejado
-            temp2->proximo->proximo=temp; // O que apontava para o proximo de 'a' agora aponta para o novo elemento criado
-            tamanho++;
+        No<T> * tempInicio=inicio;
+        while(tempInicio){
+            // Se esta ao meio
+            if(tempInicio->conteudo == valor1){
+                adicionaApos(conteudo, tempInicio);
+                return;
+            }
+            if(tempInicio->conteudo == valor2){
+                adicionaApos(conteudo, tempInicio);
+                return;
+            }
+            tempInicio=tempInicio->proximo;
         }
     }
 
+    void imprime(){
+        No<T> * temp=inicio;
+        while(temp){
+            cout << "Char:" << temp->conteudo << "| Prox: " << temp->proximo << endl;
+            temp=temp->proximo;
+        }
+        cout << "Tamanho:: " << tamanho << endl << endl;
+    }
+
     void apagaPrimeiro(){
-        no *temp;
-        if(tamanho == 0); // não faz nada
+        if(tamanho == 1){
+            T vazio; // ponteiro vazio ( GAMBIARRA -.- )
+            inicio->conteudo=vazio;
+            tamanho--;
+        }
+        if(tamanho == 0) return; // Contribui para a instrucao acima
         else{
-            temp=inicio;
+            No<T> * temp=inicio;
             inicio=inicio->proximo;
-            free(temp);
+            delete temp;
             tamanho--;
         }
     }
 
     void apagaUltimo(){
-        no *temp, *temp2;
-        if(tamanho == 0);
+        if(tamanho == 0)return;
         else{
-            temp=inicio; // inicializa variavel que vai percorrer a cadeia
-            while(temp->proximo != NULL) temp=temp->proximo; // move-se ate uma unidade antes do ultimo
-            temp2=inicio; // inicializa variavel que vai percorrer a cadeia
-            while(temp2->proximo->conteudo != temp->conteudo) temp2=temp2->proximo; // move-se ate a penultima unidade antes do ultimo
-            free(temp); // libera ultimo
-            temp2->proximo=NULL; // penultimo aponta pra nulo
+            No<T> * temp=inicio;
+            if(!temp->proximo){
+                apagaPrimeiro();
+                return;
+            }
+            while(temp->proximo->proximo) temp=temp->proximo; // move-se ate uma unidade antes do ultimo
+            No<T> * tempParaApagar=temp->proximo;
+            temp->proximo=0;
+            delete tempParaApagar;
             tamanho--;
         }
     }
 
-    /**
-     * Ainda nao implementado
-     */
-    void apagaEntre(){
-
-    }
-
-    /**
-     * Apaga assim que pega.
-     * @return 
-     */
-    T pega(){
-        T conteudo=inicio->conteudo;
-        apagaPrimeiro();
-        return conteudo;
-    }
-
     bool contem(T conteudo){
-        no *temp;
-        bool resultado=false;
-        temp=inicio;
-        while(temp->conteudo != NULL){
-            if(temp->conteudo == conteudo){
-                resultado=true;
-                break;
-            }else temp=temp->proximo;
-        }
-        return resultado;
+        No<T> * temp=inicio;
+        while(temp->proximo)
+            if(temp->conteudo == conteudo)return true;
+            else temp=temp->proximo;
+        return false;
     }
 
-    void imprimeStruct(){
-        no *temp;
-        temp=inicio;
-        while(temp != 0){ // deferente de NULL
-            cout << "Char:" << temp->conteudo << "| Prox: " << temp->proximo << endl;
+    void remove(T elemento){
+        No<T> * temp=inicio;
+        if(temp->conteudo == elemento){
+            apagaPrimeiro();
+            return;
+        }
+        while(temp->proximo){
+            if(temp->proximo->conteudo == elemento){
+                removeProximoDepoisDe(temp);
+                return;
+            }
             temp=temp->proximo;
         }
-        cout << endl;
     }
 
+private:
+
+    void adicionaApos(T conteudo, No<T> * endereco){
+        No<T> * temp=new No<T>(conteudo);
+        temp->proximo=endereco->proximo;
+        endereco->proximo=temp;
+        tamanho++;
+    }
+
+    void removeProximoDepoisDe(No<T> * anterior){
+        No<T> * tempParaDeletar=anterior->proximo;
+        if(!anterior->proximo->proximo){
+            apagaUltimo();
+            return;
+        }
+        anterior->proximo=anterior->proximo->proximo;
+        delete tempParaDeletar;
+        tamanho--;
+    }
 };
+
+
+//
+
+//
+//    /**
+//     * Apaga assim que pega.
+//     * @return 
+//     */
+//    Tipo pega(){
+//        Tipo conteudo=inicio->conteudo;
+//        apagaPrimeiro();
+//        return conteudo;
+//    }
+//
+//

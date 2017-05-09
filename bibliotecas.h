@@ -25,3 +25,5 @@ using namespace std; // Para não precisar escrever std::cout
 #include "classePilha.h"
 #include "classeAgenda.h"
 #include "classeExpressoes.h"
+#include "classeListaEncadeada.h"
+#include "classeListaEncadeada2.h"
