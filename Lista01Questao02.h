@@ -25,7 +25,7 @@ void Lista01Questao02(){
     w.imprime();
     cout << "\nIndice do elemento Z: \n";
     int elementoBuscado=leInteiro();
-    string existencia=x.existe(elementoBuscado) ? "SIM" : "NÃO";
+    string existencia=x.contem(elementoBuscado) ? "SIM" : "NÃO";
     cout << "Elemento " << elementoBuscado << " existe em x (INDET. SE POS. N EXISTE) ? " << existencia << endl;
     cout << "Maior: " << x.maior() << " menor: " << x.menor() << endl;
 }

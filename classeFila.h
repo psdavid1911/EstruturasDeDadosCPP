@@ -5,7 +5,7 @@ using namespace std;
 
 template <class T> class Fila{
 public:
-    ListaEncadeada<T> fila=new ListaEncadeada<T>();
+    Lista<T> fila=new Lista<T>();
 
     Fila(){
 
@@ -19,7 +19,7 @@ public:
      * Pega o elemento que chegou primeiro
      * @return 
      */
-    T proximo(){
+    T desenfileira(){
         T elemento=fila.pegaPrimeiro();
         fila.removePrimeiro();
         return elemento;
@@ -29,7 +29,7 @@ public:
      * Adiciona sempre ao fim da fila
      * @param elemento
      */
-    void adiciona(T elemento){
+    void enfileira(T elemento){
         fila.adicionaAoFinal(elemento);
     }
 
@@ -60,10 +60,4 @@ public:
     void ordena(){
         fila.ordena();
     }
-
-    //private:
-    //
-    //    void remove(int indice){
-    //        fila.removeIndice(indice);
-    //    }
 };

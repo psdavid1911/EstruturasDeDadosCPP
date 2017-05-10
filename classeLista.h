@@ -10,6 +10,10 @@ public:
         tamanho=0;
     }
 
+    ~Lista(){
+        limpa();
+    }
+
     /**
      * Adiciona sempre ao final...
      * @param valor
@@ -76,7 +80,7 @@ public:
     /*
      verifica se a lista contem o elemento
      */
-    bool existe(T elemento){
+    bool contem(T elemento){
         for(int contador=0; contador < tamanho; contador++)
             if(elemento == vetor[contador])return true;
         return false;
@@ -88,7 +92,7 @@ public:
      */
     void remove(T valor){
         Lista novo;
-        if(!existe(valor))return;
+        if(!contem(valor))return;
         for(int contador=0; contador < tamanho; contador++){
             if(vetor[contador] == valor) continue;
             else novo.adiciona(vetor[contador]);
@@ -166,6 +170,18 @@ public:
     void limpa(){
         tamanho=0;
         vetor=new T[++tamanho];
+    }
+
+    void removePrimeiro(){
+        removeIndice(0);
+    }
+
+    T pegaPrimeiro(){
+        return pega(0);
+    }
+
+    void adicionaAoFinal(T elemento){
+        adiciona(elemento);
     }
 
 private:

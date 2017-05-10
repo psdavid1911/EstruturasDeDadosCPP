@@ -18,7 +18,7 @@ void Lista05Questao01(){
      * Cria aos alunos na fila
      */
     for(int i=0; i < 1000; i++){
-        filaDePessoas.adiciona((rand() % 60 - 30)*60); // adiciona o tempo de chegada entre 0 e 60 // ou -30 < inicioDeEntrega <  30
+        filaDePessoas.enfileira((rand() % 60 - 30)*60); // adiciona o tempo de chegada entre 0 e 60 // ou -30 < inicioDeEntrega <  30
     }
     filaDePessoas.ordena(); // TRANSFORMA EM FILA DE VERDADE!!!
 
@@ -28,7 +28,7 @@ void Lista05Questao01(){
     while(tempo <= 30 * 60){ // valor extra de tempo limite se remover todos serão atendidos, tempo em segundos
         for(int i=0; i < numeroDeServidores; i++){
             if(filaDePessoas.naoEstaVazia()){
-                filaTemporaria.adiciona(abs(filaDePessoas.proximo() - (i * tempo)));
+                filaTemporaria.enfileira(abs(filaDePessoas.desenfileira() - (i * tempo)));
             }else break;
         }
         tempo+=4; // demora 4 segundos pra um ciclo invariavelmente
@@ -39,9 +39,9 @@ void Lista05Questao01(){
      */
     int soma=0;
     while(filaTemporaria.naoEstaVazia()){
-        int temp=filaTemporaria.proximo();
+        int temp=filaTemporaria.desenfileira();
         soma+=temp;
-        filaDeAtendidos.adiciona(temp);
+        filaDeAtendidos.enfileira(temp);
     }
 
     /**
