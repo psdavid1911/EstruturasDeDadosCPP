@@ -21,7 +21,6 @@ public:
             novoVetor[contador]=vetor[contador];
         }
         novoVetor[contador]=valor;
-        //delete inteiros; // essa opcao da problema mas onde vai liberar a memoria? 
         vetor=novoVetor;
     }
 

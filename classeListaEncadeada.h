@@ -18,11 +18,10 @@ template <typename T> struct No{
         this->conteudo=conteudo;
         this->proximo=proximo;
     }
-
 };
 
 template <typename T> struct ListaEncadeada{
-    No<T>* inicio;
+    No<T> * inicio;
     int tamanho;
 
     ListaEncadeada(){
@@ -31,7 +30,7 @@ template <typename T> struct ListaEncadeada{
     }
 
     ~ListaEncadeada(){
-
+        limpa();
     }
 
     void adicionaAoInicio(T conteudo){
@@ -83,7 +82,7 @@ template <typename T> struct ListaEncadeada{
         cout << "Tamanho:: " << tamanho << endl << endl;
     }
 
-    void apagaPrimeiro(){
+    void removePrimeiro(){
         if(tamanho == 1){
             T vazio; // ponteiro vazio ( GAMBIARRA -.- )
             inicio->conteudo=vazio;
@@ -98,12 +97,12 @@ template <typename T> struct ListaEncadeada{
         }
     }
 
-    void apagaUltimo(){
+    void removeUltimo(){
         if(tamanho == 0)return;
         else{
             No<T> * temp=inicio;
             if(!temp->proximo){
-                apagaPrimeiro();
+                removePrimeiro();
                 return;
             }
             while(temp->proximo->proximo) temp=temp->proximo; // move-se ate uma unidade antes do ultimo
@@ -125,7 +124,7 @@ template <typename T> struct ListaEncadeada{
     void remove(T elemento){
         No<T> * temp=inicio;
         if(temp->conteudo == elemento){
-            apagaPrimeiro();
+            removePrimeiro();
             return;
         }
         while(temp->proximo){
@@ -135,6 +134,74 @@ template <typename T> struct ListaEncadeada{
             }
             temp=temp->proximo;
         }
+    }
+
+    bool estaVazia(){
+        return tamanho == 0;
+    }
+
+    bool naoEstaVazia(){
+        return !estaVazia();
+    }
+
+    /**
+     * Não foi testada ainda
+     * @return 
+     */
+    T pega(int indice){
+        if(indice >= tamanho || indice < 0){// 0 1
+            T vazio;
+            return vazio;
+        }
+        No<T> * enderecoDoIndice=inicio;
+        int contador=0;
+        while(contador != indice){//2 2
+            contador++;
+            enderecoDoIndice=enderecoDoIndice->proximo;
+        }
+        return enderecoDoIndice->conteudo;
+    }
+
+    T pegaPrimeiro(){
+        return inicio->conteudo;
+    }
+
+    /**
+     * Não é eficiente na execução, mas economiza memória RAM
+     */
+    void limpa(){
+        for(int i=0; i < tamanho; i++){
+            removePrimeiro();
+        }
+    }
+
+    void trocaNos(T no1, T no2){
+        if(contem(no1) && contem(no2)){
+            No<T> * indice1=inicio;
+            while(indice1->conteudo != no1) indice1=indice1->proximo;
+            No<T> * indice2=inicio;
+            while(indice2->conteudo != no2) indice2=indice2->proximo;
+            // troca
+            T temp=indice1->conteudo;
+            indice1->conteudo=indice2->conteudo;
+            indice2->conteudo=temp;
+        }else return;
+    }
+
+    void SelectionSort(){
+        int min, aux;
+        for(int i=0; i < tamanho - 1; i++){
+            min=i;
+            for(int j=i + 1; j < tamanho; j++)
+                if(pega(j) < pega(min))
+                    min=j;
+            if(min != i)
+                trocaNos(pega(min), pega(i));
+        }
+    }
+
+    void ordena(){
+        SelectionSort();
     }
 
 private:
@@ -149,7 +216,7 @@ private:
     void removeProximoDepoisDe(No<T> * anterior){
         No<T> * tempParaDeletar=anterior->proximo;
         if(!anterior->proximo->proximo){
-            apagaUltimo();
+            removeUltimo();
             return;
         }
         anterior->proximo=anterior->proximo->proximo;
@@ -158,18 +225,13 @@ private:
     }
 };
 
-
-//
-
-//
-//    /**
-//     * Apaga assim que pega.
-//     * @return 
-//     */
-//    Tipo pega(){
-//        Tipo conteudo=inicio->conteudo;
-//        apagaPrimeiro();
-//        return conteudo;
-//    }
-//
-//
+void teste(){
+    ListaEncadeada<int> * l=new ListaEncadeada<int>();
+    l->adicionaAoFinal(4);
+    l->adicionaAoFinal(5);
+    l->adicionaAoFinal(1);
+    l->adicionaAoFinal(7);
+    l->adicionaAoFinal(2);
+    l->ordena();
+    l->imprime();
+}

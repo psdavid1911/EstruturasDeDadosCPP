@@ -46,12 +46,12 @@ int Lista03Questao01(){
     /**
      * Questao 8
      */
-    lista->apagaUltimo();
+    lista->removeUltimo();
     lista->imprime();
     /**
      * Questao 9
      */
-    lista->apagaPrimeiro();
+    lista->removePrimeiro();
     lista->imprime();
     /**
      * Questao 10 - OBS MINHA LÓGICA LEVA EM CONSIDERAÇÃO A ÚLTIMA OCORRENCIA ANTES DA PRIMEIRA

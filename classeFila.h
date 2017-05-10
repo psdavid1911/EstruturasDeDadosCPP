@@ -5,10 +5,14 @@ using namespace std;
 
 template <class T> class Fila{
 public:
-    Lista<T> fila;
+    ListaEncadeada<T> fila=new ListaEncadeada<T>();
 
     Fila(){
 
+    }
+
+    ~Fila(){
+        delete fila;
     }
 
     /**
@@ -16,8 +20,8 @@ public:
      * @return 
      */
     T proximo(){
-        T elemento=fila.pega(0);
-        fila.removeIndice(0);
+        T elemento=fila.pegaPrimeiro();
+        fila.removePrimeiro();
         return elemento;
     }
 
@@ -26,7 +30,7 @@ public:
      * @param elemento
      */
     void adiciona(T elemento){
-        fila.adiciona(elemento);
+        fila.adicionaAoFinal(elemento);
     }
 
     int tamanho(){
@@ -34,7 +38,7 @@ public:
     }
 
     bool existe(T elemento){
-        return fila.existe(elemento);
+        return fila.contem(elemento);
     }
 
     bool estaVazia(){
@@ -57,9 +61,9 @@ public:
         fila.ordena();
     }
 
-private:
-
-    void remove(int indice){
-        fila.removeIndice(indice);
-    }
+    //private:
+    //
+    //    void remove(int indice){
+    //        fila.removeIndice(indice);
+    //    }
 };

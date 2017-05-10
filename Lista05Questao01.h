@@ -10,9 +10,9 @@ void Lista05Questao01(){
     int numeroDeServidores=leInteiro();
 
     int tempo=0;
-    Fila<int> filaDePessoas{};
-    Fila<int> filaTemporaria{};
-    Fila<int> filaDeAtendidos{};
+    Fila<int> * filaDePessoas=new Fila<int>();
+    Fila<int> * filaTemporaria=new Fila<int>();
+    Fila<int> * filaDeAtendidos=new Fila<int>();
 
     /**
      * Cria aos alunos na fila
@@ -63,4 +63,8 @@ void Lista05Questao01(){
     imprime("Tempo médio na fila: " + tempoMedioDeEspera.paraTexto() + " segundos \n");
     imprime("Tempo médio na fila: " + tempoMedioDeEsperaMinutos.paraTexto() + " minutos \n");
     imprime("Número inicial de pessoas na fila: " + numeroDePessoasNaFila.paraString() + "\n");
+
+    delete filaDeAtendidos;
+    delete filaDePessoas;
+    delete filaTemporaria;
 }
