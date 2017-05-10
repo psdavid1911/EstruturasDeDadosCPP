@@ -189,14 +189,11 @@ template <typename T> struct ListaEncadeada{
     }
 
     void SelectionSort(){
-        int min, aux;
+        int min;
         for(int i=0; i < tamanho - 1; i++){
             min=i;
-            for(int j=i + 1; j < tamanho; j++)
-                if(pega(j) < pega(min))
-                    min=j;
-            if(min != i)
-                trocaNos(pega(min), pega(i));
+            for(int j=i + 1; j < tamanho; j++) if(pega(j) < pega(min)) min=j;
+            if(min != i) trocaNos(pega(min), pega(i));
         }
     }
 
@@ -231,7 +228,19 @@ void teste(){
     l->adicionaAoFinal(5);
     l->adicionaAoFinal(1);
     l->adicionaAoFinal(7);
-    l->adicionaAoFinal(2);
+    l->adicionaAoFinal(3);
+    l->imprime();
+
+    cout
+            << endl
+            << "end-1: "<< l->pega(-1) << endl
+            << "end0: " << l->pega(0) << endl
+            << "end1: " << l->pega(1) << endl
+            << "end2: " << l->pega(2) << endl
+            << "end3: " << l->pega(3) << endl
+            << "end4: " << l->pega(4) << endl
+            << endl;
+
     l->ordena();
     l->imprime();
 }
