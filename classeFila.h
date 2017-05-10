@@ -5,7 +5,7 @@ using namespace std;
 
 template <class T> class Fila{
 public:
-    Lista<T> * fila=new Lista<T>();
+    ListaEncadeada<T> * fila=new ListaEncadeada<T>();
 
     Fila(){
 

@@ -27,7 +27,7 @@ public:
         }
         novoVetor[contador]=valor;
         vetor=novoVetor;
-        delete tempParaApagar;
+        delete[] tempParaApagar;
     }
 
     void imprime(){

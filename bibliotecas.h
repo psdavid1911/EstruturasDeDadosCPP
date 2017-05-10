@@ -6,7 +6,7 @@
 #include <math.h>    // 
 #include <string>    // string
 #include <sstream>   // ta sendo usada para conversão de tipos primitivos (por meio de stream)
-#include <stdlib.h>     /* abs */
+#include <stdlib.h>  //abs
 /**
  * Não usados
  */

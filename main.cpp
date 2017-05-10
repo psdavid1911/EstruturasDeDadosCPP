@@ -40,7 +40,7 @@ int main(){
                 << "LISTA 04" << endl
                 << "13" << ". Questao 01 da lista 04" << endl
                 << "LISTA 05" << endl
-                << "14" << ". Questao 01 da lista 04" << endl
+                << "14" << ". Questao 01 da lista 05" << endl
                 << "OUTRAS OPCOES" << endl
                 << "98" << ". Arquivo criado exclusivamente para testes." << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
