@@ -13,7 +13,7 @@
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
-//#include "Lista05Questao01.h"
+#include "Lista05Questao01.h"
 
 int main(){
     while(true){
@@ -90,7 +90,7 @@ int main(){
                 Lista04Questao01();
                 break;
             case 14:
-                //Lista05Questao01();
+                Lista05Questao01();
                 break;
             case 98:
                 teste();

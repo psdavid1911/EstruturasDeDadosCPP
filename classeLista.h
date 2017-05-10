@@ -19,6 +19,7 @@ public:
      * @param valor
      */
     void adiciona(T valor){
+        T * tempParaApagar=vetor;
         T * novoVetor=new T[++tamanho];
         int contador=0;
         for(contador=0; contador < tamanho - 1; contador++){
@@ -26,6 +27,7 @@ public:
         }
         novoVetor[contador]=valor;
         vetor=novoVetor;
+        delete tempParaApagar;
     }
 
     void imprime(){
@@ -91,25 +93,25 @@ public:
      * @param valor
      */
     void remove(T valor){
-        Lista novo;
+        Lista<T> * novo=new Lista<T>();
         if(!contem(valor))return;
         for(int contador=0; contador < tamanho; contador++){
             if(vetor[contador] == valor) continue;
-            else novo.adiciona(vetor[contador]);
+            else novo->adiciona(vetor[contador]);
         }
-        this->vetor=novo.vetor;
-        this->tamanho=novo.tamanho;
+        this->vetor=novo->vetor;
+        this->tamanho=novo->tamanho;
     }
 
     void removeIndice(int posicao){
-        Lista novo;
+        Lista<T> * novo=new Lista<T>();
         if(posicaoNaoExiste(posicao)) return;
         for(int contador=0; contador < tamanho; contador++){
             if(contador == posicao) continue;
-            else novo.adiciona(vetor[contador]);
+            else novo->adiciona(vetor[contador]);
         }
-        this->vetor=novo.vetor;
-        this->tamanho=novo.tamanho;
+        this->vetor=novo->vetor;
+        this->tamanho=novo->tamanho;
     }
 
     bool posicaoExiste(int posicao){

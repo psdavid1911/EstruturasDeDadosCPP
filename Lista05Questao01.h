@@ -18,17 +18,17 @@ void Lista05Questao01(){
      * Cria aos alunos na fila
      */
     for(int i=0; i < 1000; i++){
-        filaDePessoas.enfileira((rand() % 60 - 30)*60); // adiciona o tempo de chegada entre 0 e 60 // ou -30 < inicioDeEntrega <  30
+        filaDePessoas->enfileira((rand() % 60 - 30)*60); // adiciona o tempo de chegada entre 0 e 60 // ou -30 < inicioDeEntrega <  30
     }
-    filaDePessoas.ordena(); // TRANSFORMA EM FILA DE VERDADE!!!
+    filaDePessoas->ordena(); // TRANSFORMA EM FILA DE VERDADE!!!
 
     /**
      * Armazena o tempo que cada um levou para ser atendido
      */
     while(tempo <= 30 * 60){ // valor extra de tempo limite se remover todos serão atendidos, tempo em segundos
         for(int i=0; i < numeroDeServidores; i++){
-            if(filaDePessoas.naoEstaVazia()){
-                filaTemporaria.enfileira(abs(filaDePessoas.desenfileira() - (i * tempo)));
+            if(filaDePessoas->naoEstaVazia()){
+                filaTemporaria->enfileira(abs(filaDePessoas->desenfileira() - (i * tempo)));
             }else break;
         }
         tempo+=4; // demora 4 segundos pra um ciclo invariavelmente
@@ -38,19 +38,19 @@ void Lista05Questao01(){
      * Soma os tempos de atendimento
      */
     int soma=0;
-    while(filaTemporaria.naoEstaVazia()){
-        int temp=filaTemporaria.desenfileira();
+    while(filaTemporaria->naoEstaVazia()){
+        int temp=filaTemporaria->desenfileira();
         soma+=temp;
-        filaDeAtendidos.enfileira(temp);
+        filaDeAtendidos->enfileira(temp);
     }
 
     /**
      * Cria as 'estatisticas'
      */
-    Inteiro numeroDePessoasAtendidas=filaDeAtendidos.tamanho();
-    Decimal tempoMedioDeEspera=(soma / filaDeAtendidos.tamanho());
+    Inteiro numeroDePessoasAtendidas=filaDeAtendidos->tamanho();
+    Decimal tempoMedioDeEspera=(soma / filaDeAtendidos->tamanho());
     Decimal tempoMedioDeEsperaMinutos=tempoMedioDeEspera.valor / 60;
-    Inteiro numeroDePessoasNaFila=filaDeAtendidos.tamanho() + filaDePessoas.tamanho();
+    Inteiro numeroDePessoasNaFila=filaDeAtendidos->tamanho() + filaDePessoas->tamanho();
     Inteiro tempoTotalDeFila=soma;
 
 

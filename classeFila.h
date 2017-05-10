@@ -5,7 +5,7 @@ using namespace std;
 
 template <class T> class Fila{
 public:
-    Lista<T> fila=new Lista<T>();
+    Lista<T> * fila=new Lista<T>();
 
     Fila(){
 
@@ -20,8 +20,8 @@ public:
      * @return 
      */
     T desenfileira(){
-        T elemento=fila.pegaPrimeiro();
-        fila.removePrimeiro();
+        T elemento=fila->pegaPrimeiro();
+        fila->removePrimeiro();
         return elemento;
     }
 
@@ -30,11 +30,11 @@ public:
      * @param elemento
      */
     void enfileira(T elemento){
-        fila.adicionaAoFinal(elemento);
+        fila->adicionaAoFinal(elemento);
     }
 
     int tamanho(){
-        return fila.tamanho;
+        return fila->tamanho;
     }
 
     bool existe(T elemento){
@@ -42,7 +42,7 @@ public:
     }
 
     bool estaVazia(){
-        return fila.estaVazia();
+        return fila->estaVazia();
     }
 
     bool naoEstaVazia(){
@@ -50,14 +50,14 @@ public:
     }
 
     void disperca(){
-        fila.limpa();
+        fila->limpa();
     }
 
     void imprime(){
-        fila.imprime();
+        fila->imprime();
     }
 
     void ordena(){
-        fila.ordena();
+        fila->ordena();
     }
 };
