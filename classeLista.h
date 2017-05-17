@@ -184,8 +184,10 @@ public:
     }
 
     void limpa(){
+        T * aux=vetor;
         tamanho=0;
         vetor=new T[++tamanho];
+        delete[] aux;
     }
 
     void removePrimeiro(){
