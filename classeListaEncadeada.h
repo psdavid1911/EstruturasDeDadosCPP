@@ -76,7 +76,7 @@ template <typename T> struct ListaEncadeada{
     void imprime(){
         No<T> * temp=inicio;
         while(temp){
-            cout << "Char:" << temp->conteudo << "| Prox: " << temp->proximo << endl;
+            cout << "Conteudo:" << temp->conteudo << "| Prox: " << temp->proximo << endl;
             temp=temp->proximo;
         }
         cout << "Tamanho:: " << tamanho << endl << endl;
@@ -188,12 +188,39 @@ template <typename T> struct ListaEncadeada{
         }else return;
     }
 
+    void trocaNos(int indice1, int indice2, bool entrada){
+        if(indice1 < 0) return;
+        if(indice1 >= tamanho)return;
+        if(indice2 < 0) return;
+        if(indice2 >= tamanho) return;
+        No<T> * noIndice1=inicio;
+        for(int i=0; i < tamanho; i++){
+            if(i == indice1)break;
+            noIndice1=noIndice1->proximo;
+        }
+        No<T> * noIndice2=inicio;
+        for(int i=0; i < tamanho; i++){
+            if(i == indice2)break;
+            noIndice2=noIndice2->proximo;
+        }
+        T aux=noIndice1->conteudo;
+        noIndice1->conteudo=noIndice2->conteudo;
+        noIndice2->conteudo=aux;
+    }
+
     void SelectionSort(){
         int min;
+
         for(int i=0; i < tamanho - 1; i++){
             min=i;
-            for(int j=i + 1; j < tamanho; j++) if(pega(j) < pega(min)) min=j;
-            if(min != i) trocaNos(pega(min), pega(i));
+
+            for(int j=i + 1; j < tamanho; j++)
+                if(pega(j) < pega(min))
+                    min=j;
+
+            if(min != i){
+                trocaNos(min, i, true);
+            }
         }
     }
 
@@ -224,23 +251,24 @@ private:
 
 void teste(){
     ListaEncadeada<int> * l=new ListaEncadeada<int>();
-    l->adicionaAoFinal(4);
-    l->adicionaAoFinal(5);
-    l->adicionaAoFinal(1);
-    l->adicionaAoFinal(7);
+
+    l->adicionaAoInicio(1);
+    l->imprime();
+    l->adicionaAoInicio(2);
+    l->imprime();
     l->adicionaAoFinal(3);
     l->imprime();
-
-    cout
-            << endl
-            << "end-1: "<< l->pega(-1) << endl
-            << "end0: " << l->pega(0) << endl
-            << "end1: " << l->pega(1) << endl
-            << "end2: " << l->pega(2) << endl
-            << "end3: " << l->pega(3) << endl
-            << "end4: " << l->pega(4) << endl
-            << endl;
-
+    l->adicionaAoInicio(2);
+    l->imprime();
+    l->adicionaAoFinal(4);
+    l->imprime();
+    l->trocaNos(0, 2, true);
+    l->imprime();
+    l->trocaNos(1, 4, true);
+    l->imprime();
     l->ordena();
     l->imprime();
+
+
+    delete l;
 }

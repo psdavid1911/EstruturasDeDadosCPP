@@ -2,69 +2,64 @@
 #include "bibliotecas.h"
 #include "classeFila.h"
 
-// Velocidade de preparo e entrega do hotcat 1 a cada 4s por funcionário
-
 void Lista05Questao01(){
     entradas();
     imprime("Digite o número de servidores\n");
     int numeroDeServidores=leInteiro();
 
-    int tempo=0;
-    Fila<int> * filaDePessoas=new Fila<int>();
-    Fila<int> * filaTemporaria=new Fila<int>();
-    Fila<int> * filaDeAtendidos=new Fila<int>();
+    resposta();
+    Fila<int> * famintos=new Fila<int>();
+    Fila<int> * temposDeAtendimento=new Fila<int>();
 
     /**
      * Cria aos alunos na fila
      */
-    for(int i=0; i < 1000; i++){
-        filaDePessoas->enfileira((rand() % 60 - 30)*60); // adiciona o tempo de chegada entre 0 e 60 // ou -30 < inicioDeEntrega <  30
-    }
-    filaDePessoas->ordena(); // TRANSFORMA EM FILA DE VERDADE!!!
+    for(int i=0; i < 10; i++)
+        famintos->enfileira((rand() % 60)*60); // adiciona o tempo de chegada entre 0 e 60 e transforma em segundos
+
+    famintos->imprime();
+    famintos->ordena(); // muito importante
+    famintos->imprime();
 
     /**
      * Armazena o tempo que cada um levou para ser atendido
      */
-    while(tempo <= 30 * 60){ // valor extra de tempo limite se remover todos serão atendidos, tempo em segundos
-        for(int i=0; i < numeroDeServidores; i++){
-            if(filaDePessoas->naoEstaVazia()){
-                filaTemporaria->enfileira(abs(filaDePessoas->desenfileira() - (i * tempo)));
-            }else break;
+    for(int tempo=30 * 60; tempo <= 60 * 60; tempo+=4){
+        for(int i=1; i <= numeroDeServidores; i++){
+            if(famintos->estaVazia())goto fim;
+            temposDeAtendimento->enfileira(abs(tempo - famintos->desenfileira()));
         }
-        tempo+=4; // demora 4 segundos pra um ciclo invariavelmente
     }
-
+fim:
+    int qtdeSaciados=temposDeAtendimento->tamanho();
     /**
      * Soma os tempos de atendimento
      */
-    int soma=0;
-    while(filaTemporaria->naoEstaVazia()){
-        int temp=filaTemporaria->desenfileira();
-        soma+=temp;
-        filaDeAtendidos->enfileira(temp);
-    }
+    int somaDosTempos=0;
+    while(temposDeAtendimento->naoEstaVazia()) somaDosTempos+=temposDeAtendimento->desenfileira();
 
     /**
      * Cria as 'estatisticas'
      */
-    Inteiro numeroDePessoasAtendidas=filaDeAtendidos->tamanho();
-    Decimal tempoMedioDeEspera=(soma / filaDeAtendidos->tamanho());
-    Decimal tempoMedioDeEsperaMinutos=tempoMedioDeEspera.valor / 60;
-    Inteiro numeroDePessoasNaFila=filaDeAtendidos->tamanho() + filaDePessoas->tamanho();
-    Inteiro tempoTotalDeFila=soma;
+    Inteiro atendidos=qtdeSaciados;
+    Decimal mediaEspera=(somaDosTempos / qtdeSaciados);
+    Decimal mediaConvertida=mediaEspera.valor / 60;
+    Inteiro numeroDePessoasNaFila=qtdeSaciados + famintos->tamanho();
+    Inteiro tempoTotalDeFila=somaDosTempos;
 
 
     /**
      * Mostra os resultados
      */
-    resposta();
-    imprime("Quantidade de pessoas atendidas: " + numeroDePessoasAtendidas.paraString() + "\n");
-    imprime("Tempo levado para processar a fila: " + tempoTotalDeFila.paraString() + " segundos \n");
-    imprime("Tempo médio na fila: " + tempoMedioDeEspera.paraTexto() + " segundos \n");
-    imprime("Tempo médio na fila: " + tempoMedioDeEsperaMinutos.paraTexto() + " minutos \n");
-    imprime("Número inicial de pessoas na fila: " + numeroDePessoasNaFila.paraString() + "\n");
+    imprime("Quantidade de pessoas atendidas: " + atendidos.texto() + "\n");
+    imprime("Tempo levado para processar a fila: " + tempoTotalDeFila.texto() + " segundos \n");
+    imprime("Tempo médio na fila: " + mediaEspera.paraTexto() + " segundos \n");
+    imprime("Tempo médio na fila: " + mediaConvertida.paraTexto() + " minutos \n");
+    imprime("Número inicial de pessoas na fila: " + numeroDePessoasNaFila.texto() + "\n");
 
-    delete filaDeAtendidos;
-    delete filaDePessoas;
-    delete filaTemporaria;
+    delete famintos;
+    delete temposDeAtendimento;
 }
+
+
+// Falar dos problemas desse algoritmo que não representa a realidade

@@ -30,6 +30,18 @@ public:
         delete[] tempParaApagar;
     }
 
+    void adicionaAoInicio(T valor){
+        T * tempParaApagar=vetor;
+        T * novoVetor=new T[++tamanho];
+        int contador=0;
+        novoVetor[contador]=valor;
+        for(contador=1; contador < tamanho; contador++){
+            novoVetor[contador]=vetor[contador - 1];
+        }
+        vetor=novoVetor;
+        delete[] tempParaApagar;
+    }
+
     void imprime(){
         if(estaVazia()) return;
         cout << "[";
@@ -40,7 +52,7 @@ public:
             if(contador == tamanho)break;
             cout << ", ";
         }
-        cout << "]" << endl;
+        cout << "] Tamanho: " << tamanho << endl;
     }
 
     bool estaVazia(){
@@ -104,14 +116,16 @@ public:
     }
 
     void removeIndice(int posicao){
-        Lista<T> * novo=new Lista<T>();
-        if(posicaoNaoExiste(posicao)) return;
-        for(int contador=0; contador < tamanho; contador++){
-            if(contador == posicao) continue;
-            else novo->adiciona(vetor[contador]);
+        T * novoVetor=new T[tamanho - 1];
+        int i=0, j=0;
+        while(i < tamanho){
+            if(i == posicao)++i;
+            else novoVetor[j++]=vetor[i++];
         }
-        this->vetor=novo->vetor;
-        this->tamanho=novo->tamanho;
+        T* auxiliar=vetor;
+        vetor=novoVetor;
+        tamanho=--tamanho;
+        delete[] auxiliar;
     }
 
     bool posicaoExiste(int posicao){
@@ -206,3 +220,27 @@ private:
         }
     }
 };
+
+//void teste(){
+//    Lista<int> * l=new Lista<int>();
+//
+//    l->adicionaAoInicio(1);
+//    l->imprime();
+//    l->adicionaAoInicio(2);
+//    l->imprime();
+//    l->adicionaAoFinal(3);
+//    l->imprime();
+//    l->adicionaAoInicio(2);
+//    l->imprime();
+//    l->adicionaAoFinal(4);
+//    l->imprime();
+//    l->ordena();
+//    l->imprime();
+//    l->removeIndice(0);
+//    l->imprime();
+//    l->removeIndice(l->tamanho - 1);
+//    l->imprime();
+//
+//
+//    delete l;
+//}

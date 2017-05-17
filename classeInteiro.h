@@ -20,7 +20,7 @@ public:
         this->valor=right;
     }
 
-    string paraString(){
+    string texto(){
         return NumberToString<int>(valor);
     }
 };
