@@ -96,6 +96,7 @@ int main(){
                 Lista05Questao01();
                 break;
             case 15:
+                resposta();
                 Lista06Questao01();
                 break;
             case 98:
