@@ -37,9 +37,6 @@ template <typename T> struct NoArvore{
 template <typename T> struct Arvore{
     NoArvore<T> * raiz=new NoArvore<T>;
 
-
-    Fila<NoArvore<T> *> * listaEnderecos=new Fila<NoArvore<T> *>;
-
     /**
      * Cria arvore vazia
      */
@@ -151,37 +148,13 @@ template <typename T> struct Arvore{
     }
 
     void limpa(){
-        listaEnderecos->disperca();
-        preencheListaDeLimpeza(raiz);
-        listaEnderecos->imprime();
-        while(listaEnderecos->naoEstaVazia()){
-            NoArvore<T> * no=listaEnderecos->desenfileira();
-            cout << no->conteudo << "\n";
-            delete no;
-        }
-        raiz=new NoArvore<T>{};
-        raiz->imprime();
+        apagaRecursivamente(raiz);
     }
 
-    /**
-     * Necessáriamente tem que usar o pos
-     * @param temp
-     */
-    void preencheListaDeLimpeza(NoArvore<T> * atual){
-        if(atual == 0) return;
-        preencheListaDeLimpeza(atual->esq);
-        preencheListaDeLimpeza(atual->dir);
-        listaEnderecos->enfileira(atual);
-    }
-
-    void apaga(T conteudo, NoArvore<T> * raiz){
-        bool aEsquerda=1;
-        NoArvore<T> * tempPai=pegaPai_Pre(conteudo, raiz, raiz);
-        if(tempPai->dir->conteudo == conteudo) aEsquerda=0;
-        NoArvore<T> * tempFilho=pega_Pre(conteudo, raiz);
-        preencheListaDeLimpeza(tempFilho);
-        if(aEsquerda) tempPai->esq=0;
-        else tempPai->dir=0;
+    void apagaRecursivamente(NoArvore<T> * raiz){
+        ListaEncadeada<int> * lista=listaEnderecos_Pre(raiz);
+        raiz=new NoArvore<T>;
+        for(int i=0; i < lista->tamanho; i++)delete lista->pega(i);
     }
 
     bool estaVazia(){
@@ -206,6 +179,12 @@ template <typename T> struct Arvore{
         lista_Pos(raiz);
         lista->imprime();
     }
+
+//    ListaEncadeada<int> * listaEnderecos_Pre(NoArvore<T> * raiz){
+//        ListaEncadeada<(NoArvore<T> *)> * lista=new ListaEncadeada<(NoArvore<T> *)>;
+//        listaEnderecos_Pre(raiz, lista);
+//        return lista;
+//    }
 
     ListaEncadeada<T> * lista_Pre(NoArvore<T> * raiz){
         ListaEncadeada<T> * lista=new ListaEncadeada<T>;
@@ -238,7 +217,8 @@ template <typename T> struct Arvore{
         }
         ListaEncadeada<T> * lista=lista_Pre(ponteiroFilho);
         for(int i=1; i < lista->tamanho; i++)this->insere_ArvoreDeBusca(lista->pega(i)); // pula a primeira entrada e insere o resto
-        apaga(ponteiroFilho->conteudo, ponteiroFilho);
+        //apagaRecursivamente(ponteiroFilho);
+        //deleteponteiroFIlho;
     }
 
 private:
@@ -247,6 +227,14 @@ private:
         if(temp == 0) esquerdo ? tempAnterior->esq=no : tempAnterior->dir=no;
         else no->conteudo < temp->conteudo ? insere(no, temp->esq, temp, true) : insere(no, temp->dir, temp, false);
     }
+
+//    void listaEnderecos_Pre(NoArvore<T> * temp, ListaEncadeada<(NoArvore<T> *)> * lista){
+//        if(temp != 0){
+//            lista->adicionaAoFinal(temp);
+//            lista_Pre(temp->esq, lista);
+//            lista_Pre(temp->dir, lista);
+//        }
+//    }
 
     void lista_Pre(NoArvore<T> * temp, ListaEncadeada<T> * lista){
         if(temp != 0){
