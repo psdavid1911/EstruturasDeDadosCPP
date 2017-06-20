@@ -9,7 +9,6 @@
 #include "Lista02Questao01.h"
 #include "Lista02Questao02.h"
 #include "Lista02Questao03.h"
-#include "Lista02Questao04.h"
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
