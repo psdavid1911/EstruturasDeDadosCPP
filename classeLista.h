@@ -1,8 +1,9 @@
 #pragma once
 #include "bibliotecas.h"
 
-template <class T> class Lista{
-public:
+using namespace std;
+
+template <typename T> struct Lista{
     int tamanho;
     T * vetor;
 
@@ -14,30 +15,21 @@ public:
         limpa();
     }
 
-    /**
-     * Adiciona sempre ao final...
-     * @param valor
-     */
-    void adiciona(T valor){
-        T * tempParaApagar=vetor;
-        T * novoVetor=new T[++tamanho];
-        int contador=0;
-        for(contador=0; contador < tamanho - 1; contador++){
-            novoVetor[contador]=vetor[contador];
-        }
+    void adicionaAoFinal(T valor){
+        T *tempParaApagar=vetor, *novoVetor=new T[++tamanho];
+        int contador;
+        for(contador=0; contador < tamanho - 1; contador++) novoVetor[contador]=vetor[contador];
         novoVetor[contador]=valor;
         vetor=novoVetor;
         delete[] tempParaApagar;
     }
 
     void adicionaAoInicio(T valor){
-        T * tempParaApagar=vetor;
-        T * novoVetor=new T[++tamanho];
+        T * tempParaApagar=vetor, novoVetor=new T[++tamanho];
         int contador=0;
         novoVetor[contador]=valor;
-        for(contador=1; contador < tamanho; contador++){
+        for(contador=1; contador < tamanho; contador++)
             novoVetor[contador]=vetor[contador - 1];
-        }
         vetor=novoVetor;
         delete[] tempParaApagar;
     }
@@ -56,17 +48,13 @@ public:
     }
 
     bool estaVazia(){
-        if(tamanho <= 0) return true;
-        else return false;
+        return tamanho < 0;
     }
 
     bool naoEstaVazia(){
         return !estaVazia();
     }
 
-    /**
-     * Método selection sort
-     */
     void ordena(){
         SelectionSort();
     }
@@ -81,19 +69,10 @@ public:
         vetor=novoVetor;
     }
 
-    /*
-     * vetorInteiros & vetorInteiros::operator=(vetorInteiros outro){
-        this->inteiros = outro.inteiros;
-        this->tamanhoDoVetor = outro.tamanhoDoVetor;
-    }*/
-
     T pega(int posicao){
         return vetor[posicao];
     }
 
-    /*
-     verifica se a lista contem o elemento
-     */
     bool contem(T elemento){
         for(int contador=0; contador < tamanho; contador++)
             if(elemento == vetor[contador])return true;
@@ -105,11 +84,11 @@ public:
      * @param valor
      */
     void remove(T valor){
-        Lista<T> * novo=new Lista<T>();
+        Lista<T> * novo=new Lista<T>;
         if(!contem(valor))return;
         for(int contador=0; contador < tamanho; contador++){
             if(vetor[contador] == valor) continue;
-            else novo->adiciona(vetor[contador]);
+            else novo->adicionaAoFinal(vetor[contador]);
         }
         this->vetor=novo->vetor;
         this->tamanho=novo->tamanho;
@@ -173,7 +152,7 @@ public:
     Lista sublista(int indiceInicio, int largura){
         Lista novaLista;
         for(int contador=indiceInicio; contador < largura; contador++)
-            novaLista.adiciona(vetor[contador]);
+            novaLista.adicionaAoFinal(vetor[contador]);
         return novaLista;
     }
 
@@ -198,10 +177,6 @@ public:
         return pega(0);
     }
 
-    void adicionaAoFinal(T elemento){
-        adiciona(elemento);
-    }
-
 private:
 
     void SelectionSort(){
@@ -222,27 +197,3 @@ private:
         }
     }
 };
-
-//void teste(){
-//    Lista<int> * l=new Lista<int>();
-//
-//    l->adicionaAoInicio(1);
-//    l->imprime();
-//    l->adicionaAoInicio(2);
-//    l->imprime();
-//    l->adicionaAoFinal(3);
-//    l->imprime();
-//    l->adicionaAoInicio(2);
-//    l->imprime();
-//    l->adicionaAoFinal(4);
-//    l->imprime();
-//    l->ordena();
-//    l->imprime();
-//    l->removeIndice(0);
-//    l->imprime();
-//    l->removeIndice(l->tamanho - 1);
-//    l->imprime();
-//
-//
-//    delete l;
-//}

@@ -12,13 +12,13 @@ void Lista01Questao04(){ // crivo de Eratóstenes
     do{
         lista.limpa();
         int valorLido=leInteiro();
-        lista.adiciona(2);
-        lista.adiciona(3);
-        lista.adiciona(5);
-        lista.adiciona(7);
+        lista.adicionaAoFinal(2);
+        lista.adicionaAoFinal(3);
+        lista.adicionaAoFinal(5);
+        lista.adicionaAoFinal(7);
         for(int numero=2; numero < 2 * valorLido; numero++){
             if(numero % 2 == 0 || numero % 3 == 0 || numero % 5 == 0 || numero % 7 == 0){
-            }else lista.adiciona(numero);
+            }else lista.adicionaAoFinal(numero);
         }
         lista.imprime();
         busca=lista.buscaBinaria(valorLido, 0, lista.tamanho);

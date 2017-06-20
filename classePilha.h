@@ -20,7 +20,7 @@ public:
     }
 
     void empilha(T conteudo){
-        pilha->adiciona(conteudo);
+        pilha->adicionaAoFinal(conteudo);
     }
 
     T desempilha(){

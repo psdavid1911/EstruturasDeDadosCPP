@@ -258,27 +258,3 @@ private:
         tamanho--;
     }
 };
-
-void teste(){
-    ListaEncadeada<int> * l=new ListaEncadeada<int>();
-
-    l->adicionaAoInicio(1);
-    l->imprime();
-    l->adicionaAoInicio(2);
-    l->imprime();
-    l->adicionaAoFinal(3);
-    l->imprime();
-    l->adicionaAoInicio(2);
-    l->imprime();
-    l->adicionaAoFinal(4);
-    l->imprime();
-    l->trocaNos(0, 2, true);
-    l->imprime();
-    l->trocaNos(1, 4, true);
-    l->imprime();
-    l->ordena();
-    l->imprime();
-
-
-    delete l;
-}

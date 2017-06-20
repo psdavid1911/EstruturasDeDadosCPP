@@ -12,7 +12,7 @@ void Lista01Questao05(){
     int valorLido=leInteiro();
     int tamanhoInicial;
     while(valorLido != -1){
-        a.adiciona(valorLido);
+        a.adicionaAoFinal(valorLido);
         valorLido=leInteiro();
     }
     resposta();
@@ -23,8 +23,8 @@ void Lista01Questao05(){
         if(a.vetor[contador] == a.vetor[contador + 1]){
             int valorAtual=a.vetor[contador--];
             a.remove(valorAtual);
-            a.adiciona(valorAtual);
-            repetidos.adiciona(valorAtual);
+            a.adicionaAoFinal(valorAtual);
+            repetidos.adicionaAoFinal(valorAtual);
         }
     if(repetidos.tamanho == 0) cout << "Não tem elementos repetidos" << endl;
     else{

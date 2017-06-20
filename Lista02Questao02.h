@@ -34,8 +34,8 @@ void Lista02Questao02(){
         bool b=leBool();
         cout << "Quantas pecas possui ? ";
         int i=leInteiro();
-        if(b)listaDeFuncionariosMasculinos.adiciona(Funcionario(s, b, i));
-        else listaDeFuncionariosFemininos.adiciona(Funcionario(s, b, i));
+        if(b)listaDeFuncionariosMasculinos.adicionaAoFinal(Funcionario(s, b, i));
+        else listaDeFuncionariosFemininos.adicionaAoFinal(Funcionario(s, b, i));
 
         cout << "Deseja inserir um novo funcionário 0/1 (false/true)? ";
         continua=leBool();
@@ -54,7 +54,7 @@ void Lista02Questao02(){
     }
     cout << "Quantidade de peças func. femininos: " << quantidade << endl;
     for(int contador=0; contador < listaDeFuncionariosFemininos.tamanho; contador++){
-        listaDeFuncionariosMasculinos.adiciona(listaDeFuncionariosFemininos.vetor[contador]);
+        listaDeFuncionariosMasculinos.adicionaAoFinal(listaDeFuncionariosFemininos.vetor[contador]);
     }
     int maiorValor=0;
     int funcionario=0;

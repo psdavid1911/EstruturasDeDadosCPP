@@ -1,6 +1,5 @@
 #pragma once
 
-#include <unistd.h>
 #include "funcoesAuxiliares.h"
 
 struct sitaucaoDoNo{
@@ -47,6 +46,7 @@ template <typename T> struct GrafoIndirecionado{
         os << "%" << tDaColuna << "i";
         const char * temp=os.str().c_str();
         // cabecalho
+        printf("(I = índices)\n");
         printf("%s", "I|");
         for(int coluna=0; coluna < arestas->numeroDeColunas; coluna++)printf(temp, coluna + 1);
         printf("\n--");
@@ -67,7 +67,6 @@ private:
     void buscaProfundidade(int noOrigem, int noMeta, int somaAtual, ListaEncadeada<int> *resultadoParcial, ListaEncadeada<int> *resultado, int &valorDeCorte){ // entra soma sempre 0
         cout << "somaAtual: " << somaAtual << "  valorDeCorte:" << valorDeCorte << endl;
         resultado->imprime();
-        usleep(1000000);
         if(somaAtual > valorDeCorte){
             printf("\nvoltei\n");
             return;

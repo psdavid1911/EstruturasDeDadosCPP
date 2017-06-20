@@ -78,7 +78,7 @@ public:
     }
 
     void adiciona(string nome, string endereco, string telefone, string situacao){
-        agenda.adiciona(RegistroDeAgenda(nome, endereco, telefone, situacao));
+        agenda.adicionaAoFinal(RegistroDeAgenda(nome, endereco, telefone, situacao));
     }
 
     int tamanho(){

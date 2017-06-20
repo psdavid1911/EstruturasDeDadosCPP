@@ -52,10 +52,9 @@ int main(){
                 << "99" << ". Qualquer outra opcao fecha o programa."
                 << endl;
 
-
-
-
-        switch(leInteiro()){
+        int opcao=leInteiro();
+        resposta();
+        switch(opcao){
             case 1:
                 Lista01Questao01();
                 break;
@@ -99,11 +98,9 @@ int main(){
                 Lista05Questao01();
                 break;
             case 15:
-                resposta();
                 Lista06Questao01();
                 break;
             case 16:
-                resposta();
                 Lista07Questao01();
                 break;
             case 98:

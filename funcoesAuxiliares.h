@@ -1,4 +1,6 @@
 #pragma once
+
+#include <unistd.h>
 #include "bibliotecas.h"
 
 void resposta(){
@@ -63,6 +65,10 @@ string leString(){
     return valor;
 }
 
+void esperaMs(int tempoMs){
+    usleep(tempoMs * 1000000);
+}
+
 void imprime(string s){
     cout << s;
 }
@@ -80,6 +86,6 @@ public:
     }
 };
 
-
-
-
+void teste(){
+    
+}

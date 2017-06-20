@@ -29,9 +29,9 @@ void Lista02Questao04(){
         string aluno=leString();
         for(int contador=0; contador < 3; contador++){
             cout << "Informe uma nota : " << endl;
-            notas.adiciona(leInteiro());
+            notas.adicionaAoFinal(leInteiro());
         }
-        listaDeAlunos.adiciona(Aluno(aluno, notas));
+        listaDeAlunos.adicionaAoFinal(Aluno(aluno, notas));
         cout << "Deseja inserir um novo aluno 0/1 (false/true)? ";
         continua=leBool();
     }
