@@ -32,11 +32,6 @@ template <typename T> struct GrafoIndirecionado{
         arestas->adiciona(no2, no1, 0);
     }
 
-    //    void imprime(int tDaColuna){
-    //        cout << "Tamanho:\n" << arestas->numeroDeLinhas << "\nMatriz de adjascencias:\n";
-    //        arestas->imprime(tDaColuna);
-    //    }
-
     /**
      * Precisa ser um float para continuar
      * @param tamanhoDaColuna
@@ -65,18 +60,16 @@ template <typename T> struct GrafoIndirecionado{
 private:
 
     void buscaProfundidade(int noOrigem, int noMeta, int somaAtual, ListaEncadeada<int> *resultadoParcial, ListaEncadeada<int> *resultado, int &valorDeCorte){ // entra soma sempre 0
-        cout << "somaAtual: " << somaAtual << "  valorDeCorte:" << valorDeCorte << endl;
-        resultado->imprime();
-        if(somaAtual > valorDeCorte){
-            printf("\nvoltei\n");
-            return;
-        }// cutoff, corte da arvofre de possibilidades
+        if(somaAtual > valorDeCorte) return; // cutoff, corte da arvofre de possibilidades
         else if(noOrigem == noMeta){ // encontrou a meta, faz backtrack, adiciona o resultado + caminho
             valorDeCorte=somaAtual; // muda o valor de corte para aumentar as chances de realiza-lo
             resultadoParcial->adicionaAoFinal(noOrigem + 1); // acrescenta no à lista de nos que esta navegando
             resultadoParcial->adicionaAoInicio(somaAtual);
+            ListaEncadeada<int> *paraApagar=new ListaEncadeada<int>;
             resultado->inicio=resultadoParcial->copia()->inicio;
-            resultadoParcial->removePrimeiro(); // Limpa o resultado
+            resultadoParcial->removeAoInicio(); // Limpa o resultado
+            resultadoParcial->removeAoFinal();
+            delete paraApagar;
             return;
         }else
             for(int noDestino=0; noDestino < arestas->numeroDeLinhas; noDestino++){ //navega todos os nos adjascentes
@@ -85,10 +78,9 @@ private:
                     statusDe[noOrigem].visitado=true;
                     buscaProfundidade(noDestino, noMeta, somaAtual + pegaPeso(noOrigem, noDestino), resultadoParcial, resultado, valorDeCorte); // vai somando ate chegar na meta
                     statusDe[noOrigem].visitado=false;
-                    resultadoParcial->removeUltimo(); // Depois de ter buscado e voltado, a busca ja nao importa mais e é removida, continua buscando...
+                    resultadoParcial->removeAoFinal(); // Depois de ter buscado e voltado, a busca ja nao importa mais e é removida, continua buscando...
                 }
             }// percorreu todos ou esse noOrigem É TERMINAL // faz backtrack e continua ou acaba;    
-
     }
 
     int pegaPeso(int no1, int no2){

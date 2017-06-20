@@ -21,7 +21,7 @@ public:
      */
     T desenfileira(){
         T elemento=fila->pegaPrimeiro();
-        fila->removePrimeiro();
+        fila->removeAoInicio();
         return elemento;
     }
 

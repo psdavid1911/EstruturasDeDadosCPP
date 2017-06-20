@@ -31,6 +31,7 @@ template <typename T> struct ListaEncadeada{
 
     ~ListaEncadeada(){
         limpa();
+        delete inicio;
     }
 
     void adicionaAoInicio(T conteudo){
@@ -82,7 +83,7 @@ template <typename T> struct ListaEncadeada{
         cout << "Tamanho:: " << tamanho << endl << endl;
     }
 
-    void removePrimeiro(){
+    void removeAoInicio(){
         if(tamanho == 1){
             T vazio; // ponteiro vazio ( GAMBIARRA -.- )
             inicio->conteudo=vazio;
@@ -97,12 +98,12 @@ template <typename T> struct ListaEncadeada{
         }
     }
 
-    void removeUltimo(){
+    void removeAoFinal(){
         if(tamanho == 0)return;
         else{
             No<T> * temp=inicio;
             if(!temp->proximo){
-                removePrimeiro();
+                removeAoInicio();
                 return;
             }
             while(temp->proximo->proximo) temp=temp->proximo; // move-se ate uma unidade antes do ultimo
@@ -124,7 +125,7 @@ template <typename T> struct ListaEncadeada{
     void remove(T elemento){
         No<T> * temp=inicio;
         if(temp->conteudo == elemento){
-            removePrimeiro();
+            removeAoInicio();
             return;
         }
         while(temp->proximo){
@@ -171,7 +172,7 @@ template <typename T> struct ListaEncadeada{
      */
     void limpa(){
         while(tamanho > 0){
-            removePrimeiro();
+            removeAoInicio();
         }
     }
 
@@ -250,7 +251,7 @@ private:
     void removeProximoDepoisDe(No<T> * anterior){
         No<T> * tempParaDeletar=anterior->proximo;
         if(!anterior->proximo->proximo){
-            removeUltimo();
+            removeAoFinal();
             return;
         }
         anterior->proximo=anterior->proximo->proximo;
