@@ -1,5 +1,5 @@
 <h1># Estruturas de Dados em C++<br>EstruturasDeDadosCPP</h1>
-
+<br>
 <p>
 Exercícios resolvidos da disciplina de Estruturas de dados, todos estarão aqui.
 As listas podem ser encontradas na pasta "Listas".
