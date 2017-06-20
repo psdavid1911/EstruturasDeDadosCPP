@@ -8,7 +8,8 @@ As listas podem ser encontradas na pasta "Listas".
 <h2>Exrecícios compilados com C++14</h2>
 <p>
 Flag de compilação gerada automaticamente pela IDE (Netbeans)<br>
-g++    -c -O2 -Werror -std=c++14 -MMD -MP -MF "build/Release/GNU-Linux/main.o.d" -o build/Release/GNU-Linux/main.o main.cpp
+g++    -c -O2 -Werror -std=c++14 -MMD -MP -MF "build/Release/GNU-Linux/main.o.d"<br>
+    -o build/Release/GNU-Linux/main.o main.cpp
 </p>
 
 Contato: ps.david@live.com
