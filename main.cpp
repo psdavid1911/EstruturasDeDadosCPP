@@ -8,13 +8,14 @@
 #include "Lista01Questao05.h"
 #include "Lista02Questao01.h"
 #include "Lista02Questao02.h"
-#include "Lista02Questao03.h" // É a questão 4
+#include "Lista02Questao03.h"
 #include "Lista02Questao04.h"
 #include "Lista02Questao06.h"
 #include "Lista03Questao01.h"
 #include "Lista04Questao01.h"
 #include "Lista05Questao01.h"
 #include "Lista06Questao01.h"
+#include "Lista07Questao01.h"
 
 int main(){
     while(true){
@@ -44,6 +45,8 @@ int main(){
                 << "14" << ". Questao 01 da lista 05" << endl
                 << "LISTA 06" << endl
                 << "15" << ". Questao 01 da lista 06" << endl
+                << "LISTA 07" << endl
+                << "16" << ". Questao 01 da lista 07" << endl
                 << "OUTRAS OPCOES" << endl
                 << "98" << ". Arquivo criado exclusivamente para testes." << endl
                 << "99" << ". Qualquer outra opcao fecha o programa."
@@ -98,6 +101,10 @@ int main(){
             case 15:
                 resposta();
                 Lista06Questao01();
+                break;
+            case 16:
+                resposta();
+                Lista07Questao01();
                 break;
             case 98:
                 teste();

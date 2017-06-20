@@ -27,3 +27,4 @@ using namespace std; // Para não precisar escrever std::cout
 #include "classeExpressoes.h"
 #include "classeListaEncadeada.h"
 #include "classeFila.h"
+#include "classeGrafo.h"

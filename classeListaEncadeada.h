@@ -170,7 +170,7 @@ template <typename T> struct ListaEncadeada{
      * Não é eficiente na execução, mas economiza memória RAM
      */
     void limpa(){
-        for(int i=0; i < tamanho; i++){
+        while(tamanho > 0){
             removePrimeiro();
         }
     }
@@ -226,6 +226,16 @@ template <typename T> struct ListaEncadeada{
 
     void ordena(){
         SelectionSort();
+    }
+
+    ListaEncadeada<T> *copia(){
+        No<T> *temp=inicio;
+        ListaEncadeada<T> *novaLista=new ListaEncadeada<T>;
+        for(int i=0; i < tamanho; i++){
+            novaLista->adicionaAoFinal(temp->conteudo);
+            temp=temp->proximo;
+        }
+        return novaLista;
     }
 
 private:

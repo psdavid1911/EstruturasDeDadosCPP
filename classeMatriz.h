@@ -36,8 +36,9 @@ public:
         matriz=new T[numeroDeLinhas * numeroDeColunas];
     }
 
-    void adiciona(int linha, int coluna, int valor){
-        matriz[linha * numeroDeColunas + coluna]=valor;
+    void adiciona(int linha, int coluna, T valor){
+        if(linha < numeroDeLinhas && linha >= 0 && coluna >= 0 && coluna < numeroDeColunas)
+            matriz[linha * numeroDeColunas + coluna]=valor;
     }
 
     Matriz<T> operator*(const Matriz<T>& right) const{
@@ -132,6 +133,30 @@ public:
         cout << endl;
     }
 
+    /**
+     * Precisa ser um float para continuar
+     * @param tamanhoDaColuna
+     */
+    void imprime(int tDaColuna){ // tamanho da coluna
+        ostringstream os;
+        os << "%" << tDaColuna << "i";
+        const char * temp=os.str().c_str();
+        // cabecalho
+        printf("%s", "I|");
+        for(int coluna=0; coluna < this->numeroDeColunas; coluna++)printf(temp, coluna);
+        printf("\n--");
+        for(int coluna=0; coluna < this->numeroDeColunas * tDaColuna; coluna++)printf("-");
+        cout << endl;
+        // ------------
+        for(int linha=0; linha < this->numeroDeLinhas; linha++){
+            printf("%i|", linha);
+            for(int coluna=0; coluna < this->numeroDeColunas; coluna++)
+                printf(temp, matriz[linha * numeroDeColunas + coluna]); //cout << matriz[linha * numeroDeColunas + coluna] << "   ";
+            cout << endl;
+        }
+        cout << endl;
+    }
+
     // PROMPTS
 
     /**
@@ -143,6 +168,10 @@ public:
                 adiciona(linha, coluna, leInteiro());
             }
         }
+    }
+
+    T pega(int linha, int coluna){
+        return matriz[linha * numeroDeColunas + coluna];
     }
 
 };
